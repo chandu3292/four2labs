@@ -1,0 +1,17 @@
+<svg width="680" height="160" viewBox="0 0 680 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wordmark -->
+  <text x="0" y="88" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="800" font-size="82" fill="#0F172A" letter-spacing="-2">innolah</text>
+
+  <!-- Accent dot on the first "i" — replaces the tittle with a gradient dot -->
+  <circle cx="22" cy="22" r="10" fill="url(#accent)"/>
+
+  <!-- TECHNOLOGIES below -->
+  <text x="2" y="130" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="700" font-size="22" fill="#94A3B8" letter-spacing="10">TECHNOLOGIES</text>
+</svg>
