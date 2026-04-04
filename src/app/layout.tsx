@@ -1,30 +1,31 @@
-import type { Metadata } from "next";
-import { Manrope, Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "innolah — AI Systems That Run Your Business",
+  title: "innolah — AI Systems That Scale Your Business",
   description:
-    "We build AI automations, intelligent pipelines, websites, and apps that transform how businesses operate.",
+    "We build AI automations, intelligent pipelines, websites, and custom apps that eliminate manual work and accelerate growth.",
   keywords: [
     "AI automation",
     "business automation",
     "AI pipelines",
     "web development",
     "app development",
+    "workflow automation",
   ],
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -35,10 +36,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${inter.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-background text-foreground">{children}</body>
     </html>
   );
 }
