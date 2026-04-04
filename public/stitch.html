@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>innolah | Architecting Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#323348",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#00a0aa",
+                        "on-tertiary-container": "#002f33",
+                        "on-surface-variant": "#e5bcc5",
+                        "primary-fixed-dim": "#ffb1c4",
+                        "on-primary-container": "#590028",
+                        "on-primary-fixed-variant": "#8f0044",
+                        "surface-container": "#1d1e32",
+                        "secondary-fixed-dim": "#c2c3ed",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "surface-variant": "#323348",
+                        "on-tertiary": "#00363a",
+                        "inverse-primary": "#ba005b",
+                        "outline": "#ac878f",
+                        "on-background": "#e1e0fb",
+                        "on-secondary-fixed": "#161839",
+                        "on-primary-fixed": "#3f001a",
+                        "on-tertiary-fixed": "#002022",
+                        "surface-tint": "#ffb1c4",
+                        "secondary-fixed": "#e0e0ff",
+                        "error-container": "#93000a",
+                        "on-secondary": "#2b2d4f",
+                        "primary-container": "#ff4a8d",
+                        "tertiary-fixed": "#7df4ff",
+                        "surface": "#111225",
+                        "inverse-on-surface": "#2e2f43",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#27283d",
+                        "background": "#111225",
+                        "surface-container-low": "#191a2d",
+                        "outline-variant": "#5c3f46",
+                        "tertiary": "#00dbe9",
+                        "on-secondary-fixed-variant": "#424467",
+                        "on-secondary-container": "#b4b5df",
+                        "on-primary": "#65002e",
+                        "inverse-surface": "#e1e0fb",
+                        "secondary": "#c2c3ed",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "primary-fixed": "#ffd9e1",
+                        "primary": "#ffb1c4",
+                        "surface-bright": "#37374d",
+                        "surface-container-lowest": "#0b0c1f",
+                        "on-surface": "#e1e0fb",
+                        "secondary-container": "#44466a",
+                        "surface-dim": "#111225",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(55, 55, 77, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(92, 63, 70, 0.2);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(255, 177, 196, 0.15);
+        }
+        .mesh-gradient {
+            background: radial-gradient(at 0% 0%, rgba(255, 74, 141, 0.05) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(0, 219, 233, 0.05) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#111225]/60 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#FFB1C4] font-headline">innolah</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-headline tracking-[0.05em] uppercase text-xs font-bold text-[#FFB1C4] border-b border-[#FFB1C4] pb-1 hover:text-[#00DBE9] transition-colors duration-300" href="#">Services</a>
+<a class="font-headline tracking-[0.05em] uppercase text-xs font-bold text-slate-400 hover:text-[#00DBE9] transition-colors duration-300" href="#">Process</a>
+<a class="font-headline tracking-[0.05em] uppercase text-xs font-bold text-slate-400 hover:text-[#00DBE9] transition-colors duration-300" href="#">Results</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container px-6 py-2.5 rounded-xl text-on-primary font-headline text-sm font-bold tracking-tight shadow-[0_0_20px_rgba(255,74,141,0.3)] active:opacity-80 active:scale-95 transition-all">
+                Start Project
+            </button>
+</div>
+<div class="bg-gradient-to-r from-transparent via-[#5C3F46]/20 to-transparent h-[1px]"></div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden mesh-gradient">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none" data-alt="Abstract cinematic mesh gradient background with deep navy and subtle pinkish magenta light leaks and grain texture"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+<span class="font-label uppercase tracking-[0.3em] text-tertiary text-xs mb-6 block bg-tertiary/10 px-4 py-1 rounded-full">Intelligence Architected</span>
+<h1 class="font-headline text-5xl md:text-8xl font-extrabold tracking-tight leading-[1.1] text-on-surface mb-8">
+                        We build the systems that <span class="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">run your business.</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mb-12">
+                        Automating the complex, optimizing the mundane. We architect the AI-driven pipelines that power modern industry.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 items-center">
+<button class="bg-gradient-to-br from-primary to-primary-container px-10 py-5 rounded-xl text-on-primary font-headline text-lg font-bold shadow-[0_0_40px_rgba(255,74,141,0.4)] hover:shadow-[0_0_60px_rgba(255,74,141,0.6)] transition-all">
+                            Start Project
+                        </button>
+<button class="glass-card px-10 py-5 rounded-xl text-on-surface font-headline text-lg font-bold border border-outline-variant/30 hover:bg-surface-bright/40 transition-all">
+                            View Case Studies
+                        </button>
+</div>
+</div>
+</div>
+<!-- Visual Anchor -->
+<div class="absolute -bottom-1/4 left-1/2 -translate-x-1/2 w-[120%] h-[120%] bg-gradient-to-t from-surface via-transparent to-transparent z-10"></div>
+</section>
+<!-- Trusted By -->
+<section class="py-16 bg-surface-container-lowest relative z-20">
+<div class="max-w-7xl mx-auto px-8">
+<p class="font-label text-center text-slate-500 uppercase tracking-widest text-[10px] mb-10">Trusted by modern industry leaders</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 grayscale opacity-40">
+<span class="font-headline text-2xl font-bold tracking-tighter">OpenAI</span>
+<span class="font-headline text-2xl font-bold tracking-tighter">stripe</span>
+<span class="font-headline text-2xl font-black italic">NVIDIA</span>
+<span class="font-headline text-2xl font-semibold uppercase tracking-widest">Scale AI</span>
+</div>
+</div>
+</section>
+<!-- Services Section (Bento Grid Style) -->
+<section class="py-32 bg-surface relative z-20 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-20">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Strategic Engineering</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-primary to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Service Card 1 -->
+<div class="md:col-span-7 glass-card p-10 rounded-xl group glow-hover transition-all relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block" data-icon="hub">hub</span>
+<h3 class="font-headline text-2xl font-bold mb-4">AI Automations</h3>
+<p class="font-body text-slate-400 max-w-md leading-relaxed">Streamline operations with custom LLM workflows that handle the heavy lifting of enterprise data management and client interactions.</p>
+<div class="mt-8 border-t border-outline-variant/10 pt-8">
+<span class="text-tertiary font-label text-xs tracking-widest uppercase">Deep Learning Integration</span>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="md:col-span-5 glass-card p-10 rounded-xl group glow-hover transition-all bg-gradient-to-br from-surface-container-high to-surface-container">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-8 block" data-icon="schema">schema</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Intelligent Pipelines</h3>
+<p class="font-body text-slate-400 leading-relaxed">Scalable data processing and decision engines designed for real-time infrastructure and complex logistics.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="md:col-span-5 glass-card p-10 rounded-xl group glow-hover transition-all">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-8 block" data-icon="web">web</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Websites</h3>
+<p class="font-body text-slate-400 leading-relaxed">High-performance, futuristic digital experiences that act as the front-end for your intelligence systems.</p>
+</div>
+<!-- Service Card 4 -->
+<div class="md:col-span-7 glass-card p-10 rounded-xl group glow-hover transition-all relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-tertiary/5 blur-[100px] rounded-full"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block" data-icon="settings_input_component">settings_input_component</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Apps</h3>
+<p class="font-body text-slate-400 max-w-md leading-relaxed">Custom-built, AI-integrated software solutions for mobile and desktop, bridging the gap between human and machine.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 bg-surface-container-low relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="text-center mb-24">
+<span class="font-label uppercase tracking-widest text-primary text-xs mb-4 block">The Methodology</span>
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold tracking-tight">How we architect.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+<!-- Connector Line (Desktop) -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent"></div>
+<!-- Step 1 -->
+<div class="relative text-center md:text-left">
+<div class="w-24 h-24 rounded-full bg-surface-container-high border border-primary/20 flex items-center justify-center mx-auto md:mx-0 mb-8 relative z-20 shadow-[0_0_30px_rgba(255,177,196,0.1)]">
+<span class="font-headline text-2xl font-black text-primary">01</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-4">Discovery</h4>
+<p class="font-body text-slate-400 leading-relaxed">We audit your current tech stack and identify high-value friction points where AI can provide immediate ROI.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative text-center md:text-left">
+<div class="w-24 h-24 rounded-full bg-surface-container-high border border-tertiary/20 flex items-center justify-center mx-auto md:mx-0 mb-8 relative z-20 shadow-[0_0_30px_rgba(0,219,233,0.1)]">
+<span class="font-headline text-2xl font-black text-tertiary">02</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-4">Architecture</h4>
+<p class="font-body text-slate-400 leading-relaxed">Our engineers design the custom pipelines and integration maps to seamlessly merge AI into your core operations.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative text-center md:text-left">
+<div class="w-24 h-24 rounded-full bg-surface-container-high border border-primary-container/20 flex items-center justify-center mx-auto md:mx-0 mb-8 relative z-20 shadow-[0_0_30px_rgba(255,74,141,0.1)]">
+<span class="font-headline text-2xl font-black text-primary-container">03</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-4">Build &amp; Ship</h4>
+<p class="font-body text-slate-400 leading-relaxed">Agile development cycles produce robust, production-ready systems that scale as your data grows.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Results Section -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="p-8 border-r border-outline-variant/10 last:border-none">
+<div class="font-headline text-6xl md:text-7xl font-extrabold text-on-surface tracking-tighter mb-4">12hrs</div>
+<div class="font-label uppercase tracking-widest text-primary text-sm font-bold">Saved Weekly</div>
+<p class="mt-6 text-slate-500 font-body text-sm italic">Per employee average across key clients</p>
+</div>
+<div class="p-8 border-r border-outline-variant/10 last:border-none">
+<div class="font-headline text-6xl md:text-7xl font-extrabold text-on-surface tracking-tighter mb-4">98%</div>
+<div class="font-label uppercase tracking-widest text-tertiary text-sm font-bold">Uptime Architecture</div>
+<p class="mt-6 text-slate-500 font-body text-sm italic">Fault-tolerant distributed pipelines</p>
+</div>
+<div class="p-8 border-r border-outline-variant/10 last:border-none">
+<div class="font-headline text-6xl md:text-7xl font-extrabold text-on-surface tracking-tighter mb-4">5.2x</div>
+<div class="font-label uppercase tracking-widest text-primary-container text-sm font-bold">Average ROI</div>
+<p class="mt-6 text-slate-500 font-body text-sm italic">Within first 6 months of deployment</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-40 bg-surface relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,177,196,0.1),transparent_70%)] pointer-events-none"></div>
+<div class="max-w-5xl mx-auto px-8 text-center relative z-10">
+<h2 class="font-headline text-4xl md:text-7xl font-extrabold tracking-tight mb-12 leading-tight">
+                    Ready to stop doing things <span class="text-slate-500">manually?</span>
+</h2>
+<div class="flex flex-col items-center">
+<p class="font-body text-xl text-slate-400 mb-12 max-w-xl">
+                        Schedule your architectural audit and see how innolah can transform your operational efficiency.
+                    </p>
+<button class="bg-gradient-to-br from-primary to-primary-container px-12 py-6 rounded-xl text-on-primary font-headline text-xl font-black shadow-[0_0_50px_rgba(255,74,141,0.5)] hover:scale-105 active:scale-95 transition-all">
+                        Book a discovery call
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-8 border-t border-[#5C3F46]/10 bg-[#0B0C1F]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-black text-[#FFB1C4] font-headline">innolah</div>
+<p class="font-['Inter'] leading-relaxed text-slate-400 text-sm">
+                    Architecting the future of enterprise intelligence through bespoke AI pipelines.
+                </p>
+</div>
+<div>
+<h5 class="font-headline text-sm font-bold uppercase tracking-widest text-[#FFB1C4] mb-8">Solutions</h5>
+<ul class="space-y-4 font-['Inter'] text-slate-400">
+<li><a class="hover:text-[#FFB1C4] transition-colors" href="#">Services</a></li>
+<li><a class="hover:text-[#FFB1C4] transition-colors" href="#">Process</a></li>
+<li><a class="hover:text-[#FFB1C4] transition-colors" href="#">Results</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline text-sm font-bold uppercase tracking-widest text-[#FFB1C4] mb-8">Legal</h5>
+<ul class="space-y-4 font-['Inter'] text-slate-400">
+<li><a class="hover:text-[#FFB1C4] transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-[#FFB1C4] transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline text-sm font-bold uppercase tracking-widest text-[#FFB1C4] mb-8">Contact</h5>
+<p class="font-['Inter'] text-slate-400 text-sm mb-4">hello@innolah.com</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-500 hover:text-[#00DBE9] cursor-pointer" data-icon="language">language</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-[#00DBE9] cursor-pointer" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-['Inter'] text-slate-500 text-xs uppercase tracking-[0.2em]">© 2024 innolah. Architecting Intelligence.</p>
+<div class="flex gap-8">
+<span class="text-[#00DBE9] font-label text-[10px] tracking-widest uppercase">London</span>
+<span class="text-slate-500 font-label text-[10px] tracking-widest uppercase">New York</span>
+<span class="text-slate-500 font-label text-[10px] tracking-widest uppercase">Remote</span>
+</div>
+</div>
+</footer>
+</body></html>
