@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="four2labs">
+  <defs>
+    <linearGradient id="ogBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f1a"/>
+      <stop offset="100%" stop-color="#151b2e"/>
+    </linearGradient>
+    <linearGradient id="ogBrand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5B8CFF"/>
+      <stop offset="55%" stop-color="#6E7CFF"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+
+  <g transform="translate(80, 100)" stroke="url(#ogBrand)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M 112 36 L 112 164 M 112 36 L 28 120 L 140 120"/>
+    <path d="M 152 64 Q 152 32 192 32 Q 232 32 232 68 Q 232 100 152 156 L 236 156"/>
+    <path d="M 12 192 Q 130 216 256 184"/>
+  </g>
+
+  <text x="380" y="180" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="88" fill="url(#ogBrand)" letter-spacing="-2">four2labs</text>
+
+  <text x="80" y="400" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="68" fill="#eef2ff" letter-spacing="-2">We build the tech.</text>
+  <text x="80" y="478" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="68" fill="url(#ogBrand)" letter-spacing="-2">You grow the business.</text>
+
+  <text x="80" y="565" font-family="Inter,system-ui,sans-serif" font-weight="500" font-size="20" fill="#7a83a0" letter-spacing="0.22em">TECH PARTNERS · INDIA &amp; US</text>
+</svg>
