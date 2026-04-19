@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -20,9 +21,11 @@ export default function Nav() {
           <NavLink to="/contact" onClick={close}>Contact</NavLink>
         </nav>
 
-        <Link to="/contact" className="btn btn-primary nav-cta" onClick={close}>Let's talk →</Link>
-
-        <button className="nav-toggle" aria-label="Toggle menu" onClick={() => setOpen(o => !o)}>☰</button>
+        <div className="nav-actions">
+          <ThemeToggle />
+          <Link to="/contact" className="btn btn-primary nav-cta" onClick={close}>Let's talk →</Link>
+          <button className="nav-toggle" aria-label="Toggle menu" onClick={() => setOpen(o => !o)}>☰</button>
+        </div>
       </div>
     </header>
   )
