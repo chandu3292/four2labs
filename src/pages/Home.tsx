@@ -8,7 +8,7 @@ export default function Home() {
           <div>
             <span className="eyebrow">Tech partners for growing businesses</span>
             <h1>We build the tech.<br /><span className="gradient-text">You grow the business.</span></h1>
-            <p className="lead">From your first website to AI that answers your phone — we design, build and look after the technology that powers your business, so you can focus on serving customers.</p>
+            <p className="lead">From your first website to AI that answers your phone - we design, build and look after the technology that powers your business, so you can focus on serving customers.</p>
             <div className="hero-actions">
               <Link to="/services" className="btn btn-primary">See what we do →</Link>
               <Link to="/contact" className="btn btn-ghost">Get a free consultation</Link>
@@ -62,18 +62,18 @@ export default function Home() {
           <div className="section-head reveal">
             <span className="eyebrow">What we do</span>
             <h2>Everything tech, under one roof</h2>
-            <p>We mix and match these building blocks to fit your business. Need something different? Just ask — if it's tech, we build it.</p>
+            <p>We mix and match these building blocks to fit your business. Need something different? Just ask - if it's tech, we build it.</p>
           </div>
           <div className="cards">
             <div className="card reveal">
               <div className="icon">🌐</div>
               <h3>Websites &amp; Apps</h3>
-              <p>A strong online presence — beautiful websites, mobile apps, and the systems behind them that quietly do the heavy lifting.</p>
+              <p>A strong online presence - beautiful websites, mobile apps, and the systems behind them that quietly do the heavy lifting.</p>
             </div>
             <div className="card reveal">
               <div className="icon">🤖</div>
               <h3>AI for your business</h3>
-              <p>AI assistants that answer calls, book appointments, run your marketing and handle the boring stuff — so you don't have to.</p>
+              <p>AI assistants that answer calls, book appointments, run your marketing and handle the boring stuff - so you don't have to.</p>
             </div>
             <div className="card reveal">
               <div className="icon">📊</div>
@@ -97,7 +97,7 @@ export default function Home() {
           <div className="section-head reveal">
             <span className="eyebrow">How we work</span>
             <h2>A simple, friendly process</h2>
-            <p>You don't need to know any tech to work with us. We translate your goals into a clear plan — and then we build it.</p>
+            <p>You don't need to know any tech to work with us. We translate your goals into a clear plan - and then we build it.</p>
           </div>
           <div className="steps">
             <div className="step reveal"><h3>We listen</h3><p>A relaxed chat about your business, your customers and what's slowing you down right now.</p></div>
@@ -113,16 +113,16 @@ export default function Home() {
           <div className="reveal">
             <span className="eyebrow">Why teams choose us</span>
             <h2>We treat your business like ours</h2>
-            <p>We're not a faceless agency. We sit with you, understand your customers, and build technology that actually helps — not technology for technology's sake.</p>
+            <p>We're not a faceless agency. We sit with you, understand your customers, and build technology that actually helps - not technology for technology's sake.</p>
             <p>Whether you're a small shop or a growing company, our job is the same: make tech feel simple, useful and worth every rupee or dollar.</p>
             <Link to="/about" className="btn btn-ghost">More about us →</Link>
           </div>
           <div className="reveal">
             <div className="stats">
               <div className="stat"><div className="stat-num">11+</div><div className="stat-label">Tech services offered</div></div>
-              <div className="stat"><div className="stat-num">2</div><div className="stat-label">Markets — India &amp; US</div></div>
+              <div className="stat"><div className="stat-num">2</div><div className="stat-label">Markets - India &amp; US</div></div>
               <div className="stat"><div className="stat-num">24/7</div><div className="stat-label">AI working for you</div></div>
-              <div className="stat"><div className="stat-num">1</div><div className="stat-label">Team — start to finish</div></div>
+              <div className="stat"><div className="stat-num">1</div><div className="stat-label">Team - start to finish</div></div>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function Home() {
         <div className="container">
           <div className="cta reveal">
             <h2>Have an idea? Or a problem?</h2>
-            <p>Tell us about your business — even if you're not sure what you need yet. We'll help you figure out what's worth building.</p>
+            <p>Tell us about your business - even if you're not sure what you need yet. We'll help you figure out what's worth building.</p>
             <Link to="/contact" className="btn btn-primary">Start a conversation →</Link>
           </div>
         </div>

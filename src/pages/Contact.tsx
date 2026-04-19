@@ -20,7 +20,7 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           ...data,
-          _subject: `New contact form — ${data.name || 'website visitor'}`,
+          _subject: `New contact form - ${data.name || 'website visitor'}`,
           _captcha: 'false',
           _template: 'box',
         }),
@@ -44,7 +44,7 @@ export default function Contact() {
         <div className="container">
           <span className="eyebrow">Contact us</span>
           <h1>Tell us about your <span className="gradient-text">business</span></h1>
-          <p>Even if you're not sure what you need, we'd love to chat. The first conversation is always free, friendly and useful — no sales pressure.</p>
+          <p>Even if you're not sure what you need, we'd love to chat. The first conversation is always free, friendly and useful - no sales pressure.</p>
         </div>
       </section>
 
@@ -73,7 +73,7 @@ export default function Contact() {
             <div className="field">
               <label htmlFor="interest">What are you interested in?</label>
               <select id="interest" name="interest" defaultValue="">
-                <option value="">— Pick one (or pick "Not sure") —</option>
+                <option value="">- Pick one (or pick "Not sure") -</option>
                 <option>A new website</option>
                 <option>A mobile app</option>
                 <option>AI for my business (calls, marketing, automation)</option>
@@ -111,7 +111,7 @@ export default function Contact() {
             </div>
             <div className="info-card">
               <div className="ic-icon">⌚</div>
-              <div><h4>Working hours</h4><p>Monday – Saturday<br />9:00 AM – 7:00 PM IST</p></div>
+              <div><h4>Working hours</h4><p>Monday - Saturday<br />9:00 AM - 7:00 PM IST</p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon">🌍</div>
@@ -133,11 +133,11 @@ export default function Contact() {
             <p>Quick answers to things people usually ask before that first conversation.</p>
           </div>
           <div className="cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
-            <div className="card reveal"><h3>Do I need to know tech?</h3><p>Not at all. Most of our clients aren't technical — that's exactly why they work with us. We translate your goals into a plan in plain language.</p></div>
+            <div className="card reveal"><h3>Do I need to know tech?</h3><p>Not at all. Most of our clients aren't technical - that's exactly why they work with us. We translate your goals into a plan in plain language.</p></div>
             <div className="card reveal"><h3>Is the first call free?</h3><p>Yes. The first 30 minutes are always free and there's no obligation to work with us afterward. You'll leave with something useful either way.</p></div>
             <div className="card reveal"><h3>Do you only build big projects?</h3><p>Not at all. We work on small one-off websites just as happily as we do full apps with AI. Tell us your goal and we'll right-size the project.</p></div>
-            <div className="card reveal"><h3>What if I just have an idea?</h3><p>That's the perfect time to talk. We'll help you figure out whether and how it could work — even before any building starts.</p></div>
-            <div className="card reveal"><h3>Do you work outside this list?</h3><p>Yes. The services on our site are our base. If you need something custom, we very likely build that too — just ask.</p></div>
+            <div className="card reveal"><h3>What if I just have an idea?</h3><p>That's the perfect time to talk. We'll help you figure out whether and how it could work - even before any building starts.</p></div>
+            <div className="card reveal"><h3>Do you work outside this list?</h3><p>Yes. The services on our site are our base. If you need something custom, we very likely build that too - just ask.</p></div>
             <div className="card reveal"><h3>How fast do you reply?</h3><p>Within one working day, almost always sooner. If it's urgent, mention that in your message.</p></div>
           </div>
         </div>
