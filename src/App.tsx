@@ -11,6 +11,22 @@ export default function App() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo(0, 0) }, [pathname])
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12 },
+    )
+    document.querySelectorAll('.reveal:not(.visible)').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [pathname])
+
   return (
     <>
       <Nav />
