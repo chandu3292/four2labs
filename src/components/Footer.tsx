@@ -33,8 +33,8 @@ export default function Footer() {
           <div>
             <h4>Get in touch</h4>
             <ul>
-              <li><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></li>
-              <li><a href="tel:+910000000000">+91 00000 00000</a></li>
+              <li><a href="mailto:hello@four2labs.com">hello@four2labs.com</a></li>
+              <li><a href="tel:+919390694802">+91 93906 94802</a></li>
             </ul>
           </div>
         </div>

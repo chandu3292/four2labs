@@ -2,14 +2,40 @@ import { useState, FormEvent } from 'react'
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
-    e.currentTarget.reset()
-    setTimeout(() => {
-      document.getElementById('form-success')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }, 50)
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const data: Record<string, string> = {}
+    formData.forEach((v, k) => { data[k] = v as string })
+
+    setSubmitting(true)
+    setError(null)
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/hello@four2labs.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          ...data,
+          _subject: `New contact form — ${data.name || 'website visitor'}`,
+          _captcha: 'false',
+          _template: 'box',
+        }),
+      })
+      if (!res.ok) throw new Error('Submission failed')
+      setSubmitted(true)
+      form.reset()
+      setTimeout(() => {
+        document.getElementById('form-success')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }, 50)
+    } catch {
+      setError('Something went wrong. Please email hello@four2labs.com directly.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -63,8 +89,11 @@ export default function Contact() {
               <textarea id="message" name="message" placeholder="What does your business do? What's slowing you down right now? What would success look like?"></textarea>
             </div>
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-              Send message →
+            {error && (
+              <p style={{ color: '#ff6b6b', fontSize: 14, margin: '0 0 12px', textAlign: 'center' }}>{error}</p>
+            )}
+            <button type="submit" disabled={submitting} className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', opacity: submitting ? 0.6 : 1, cursor: submitting ? 'wait' : 'pointer' }}>
+              {submitting ? 'Sending…' : 'Send message →'}
             </button>
             <p style={{ fontSize: 13, color: 'var(--muted)', margin: '14px 0 0', textAlign: 'center' }}>
               We usually reply within one working day.
@@ -74,11 +103,11 @@ export default function Contact() {
           <div className="contact-info reveal">
             <div className="info-card">
               <div className="ic-icon">✉</div>
-              <div><h4>Email us</h4><p><a href="mailto:hello@yourcompany.com" style={{ color: 'var(--text)' }}>hello@yourcompany.com</a></p></div>
+              <div><h4>Email us</h4><p><a href="mailto:hello@four2labs.com" style={{ color: 'var(--text)' }}>hello@four2labs.com</a></p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon">☎</div>
-              <div><h4>Call or WhatsApp</h4><p><a href="tel:+910000000000" style={{ color: 'var(--text)' }}>+91 00000 00000</a></p></div>
+              <div><h4>Call or WhatsApp</h4><p><a href="tel:+919390694802" style={{ color: 'var(--text)' }}>+91 93906 94802</a></p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon">⌚</div>
