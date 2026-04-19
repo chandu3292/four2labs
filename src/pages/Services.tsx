@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
+import { usePageMeta } from '../lib/usePageMeta'
 
 export default function Services() {
+  usePageMeta({
+    title: 'Services - AI Automation, Websites, Mobile Apps & Dashboards | four2labs',
+    description: 'AI receptionist, AI marketing agents, AI workflows, custom mobile apps, websites, dashboards, data analysis and ongoing tech support - everything tech for growing businesses.',
+    canonical: 'https://four2labs.com/services',
+  })
   return (
     <>
       <section className="page-header">

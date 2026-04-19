@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
+import { usePageMeta } from '../lib/usePageMeta'
 
 export default function About() {
+  usePageMeta({
+    title: 'About four2labs - Tech Partners for Everyday Businesses',
+    description: 'four2labs is a friendly tech consultancy helping shops, clinics, restaurants and service providers in India and the US grow with smart, simple technology.',
+    canonical: 'https://four2labs.com/about',
+  })
   return (
     <>
       <section className="page-header">

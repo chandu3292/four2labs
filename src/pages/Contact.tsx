@@ -1,6 +1,12 @@
 import { useState, FormEvent } from 'react'
+import { usePageMeta } from '../lib/usePageMeta'
 
 export default function Contact() {
+  usePageMeta({
+    title: 'Contact - Free 30-min Tech Consultation | four2labs',
+    description: 'Tell us about your business. Free 30-minute consultation, no sales pressure. We reply within one working day. Email hello@four2labs.com or call +91 93906 94802.',
+    canonical: 'https://four2labs.com/contact',
+  })
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
