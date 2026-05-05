@@ -121,7 +121,7 @@ export default function Contact() {
             </div>
             <div className="info-card">
               <div className="ic-icon">🌍</div>
-              <div><h4>Where we work</h4><p>Remote-first, serving businesses across India and the United States.</p></div>
+              <div><h4>Where we work</h4><p>Remote-first, serving businesses across the World.</p></div>
             </div>
             <div className="info-card" style={{ background: 'linear-gradient(135deg, rgba(123,92,255,0.18), rgba(91,140,255,0.12))', borderColor: 'rgba(123,92,255,0.35)' }}>
               <div className="ic-icon">★</div>
@@ -141,9 +141,9 @@ export default function Contact() {
           <div className="cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
             <div className="card reveal"><h3>Do I need to know tech?</h3><p>Not at all. Most of our clients aren't technical - that's exactly why they work with us. We translate your goals into a plan in plain language.</p></div>
             <div className="card reveal"><h3>Is the first call free?</h3><p>Yes. The first 30 minutes are always free and there's no obligation to work with us afterward. You'll leave with something useful either way.</p></div>
-            <div className="card reveal"><h3>Do you only build big projects?</h3><p>Not at all. We work on small one-off websites just as happily as we do full apps with AI. Tell us your goal and we'll right-size the project.</p></div>
+            <div className="card reveal"><h3>Do you only build big projects?</h3><p>Not at all. We're just as happy building a small, simple one-page website as we are creating a full AI-powered app. Tell us your goal and we'll shape the project to fit it.</p></div>
             <div className="card reveal"><h3>What if I just have an idea?</h3><p>That's the perfect time to talk. We'll help you figure out whether and how it could work - even before any building starts.</p></div>
-            <div className="card reveal"><h3>Do you work outside this list?</h3><p>Yes. The services on our site are our base. If you need something custom, we very likely build that too - just ask.</p></div>
+            <div className="card reveal"><h3>Do you work outside this service list?</h3><p>Yes. The services on our site are our base. If you need something custom, we very likely build that too - just ask.</p></div>
             <div className="card reveal"><h3>How fast do you reply?</h3><p>Within one working day, almost always sooner. If it's urgent, mention that in your message.</p></div>
           </div>
         </div>

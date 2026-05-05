@@ -83,7 +83,7 @@ export default function Home() {
             </div>
             <div className="card reveal">
               <div className="icon">📊</div>
-              <h3>Dashboards &amp; Insights</h3>
+              <h3>CRM Dashboards &amp; Insights</h3>
               <p>See your sales, customers and operations clearly. Turn raw numbers into simple decisions you can act on today.</p>
             </div>
             <div className="card reveal">
@@ -120,15 +120,27 @@ export default function Home() {
             <span className="eyebrow">Why teams choose us</span>
             <h2>We treat your business like ours</h2>
             <p>We're not a faceless agency. We sit with you, understand your customers, and build technology that actually helps - not technology for technology's sake.</p>
-            <p>Whether you're a small shop or a growing company, our job is the same: make tech feel simple, useful and worth every rupee or dollar.</p>
+            <p>Whether you're a small shop or a growing company, our job is the same: make tech feel simple, useful and worth every penny.</p>
             <Link to="/about" className="btn btn-ghost">More about us →</Link>
           </div>
           <div className="reveal">
-            <div className="stats">
-              <div className="stat"><div className="stat-num">11+</div><div className="stat-label">Tech services offered</div></div>
-              <div className="stat"><div className="stat-num">2</div><div className="stat-label">Markets - India &amp; US</div></div>
-              <div className="stat"><div className="stat-num">24/7</div><div className="stat-label">AI working for you</div></div>
-              <div className="stat"><div className="stat-num">1</div><div className="stat-label">Team - start to finish</div></div>
+            <div className="hero-card">
+              <div className="hc-row">
+                <div className="hc-icon">⚡</div>
+                <div><div className="hc-title">Fast delivery</div><div className="hc-sub">Live in weeks, not months</div></div>
+              </div>
+              <div className="hc-row">
+                <div className="hc-icon">🧭</div>
+                <div><div className="hc-title">Clear direction</div><div className="hc-sub">Plans you can actually understand</div></div>
+              </div>
+              <div className="hc-row">
+                <div className="hc-icon">🛟</div>
+                <div><div className="hc-title">Ongoing care</div><div className="hc-sub">We stick around after launch</div></div>
+              </div>
+              <div className="hc-row">
+                <div className="hc-icon">💬</div>
+                <div><div className="hc-title">Direct contact</div><div className="hc-sub">Talk to the people building it</div></div>
+              </div>
             </div>
           </div>
         </div>

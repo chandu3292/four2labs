@@ -26,7 +26,7 @@ export default function Footer() {
             <ul>
               <li><Link to="/services#websites">Websites &amp; Apps</Link></li>
               <li><Link to="/services#ai">AI Assistance</Link></li>
-              <li><Link to="/services#operations">Dashboards &amp; Data</Link></li>
+              <li><Link to="/services#operations">CRM Dashboards &amp; Data</Link></li>
               <li><Link to="/services#care">Maintenance</Link></li>
             </ul>
           </div>

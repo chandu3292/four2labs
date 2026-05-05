@@ -42,7 +42,7 @@ export default function Services() {
           <div className="cards">
             <div className="card reveal"><span className="tag">Orders</span><div className="icon">🧾</div><h3>Orders Module</h3><p>Take and manage customer orders in one organised place - no more scattered messages, missed orders, or messy spreadsheets.</p></div>
             <div className="card reveal"><span className="tag">Tracking</span><div className="icon">📍</div><h3>Tracking Module</h3><p>Real-time tracking so you and your customers always know exactly where deliveries, shipments or jobs stand.</p></div>
-            <div className="card reveal"><span className="tag">Visibility</span><div className="icon">📊</div><h3>Dashboards</h3><p>Clear, simple dashboards that show your sales, customers and operations at a glance - no spreadsheets needed.</p></div>
+            <div className="card reveal"><span className="tag">Visibility</span><div className="icon">📊</div><h3>CRM Dashboards</h3><p>Clear, simple dashboards that show your sales, customers and operations at a glance - no spreadsheets needed.</p></div>
             <div className="card reveal"><span className="tag">Insight</span><div className="icon">📈</div><h3>Data Analysis</h3><p>We dig into your numbers and turn them into plain-English insights you can use to make smarter business decisions.</p></div>
           </div>
         </div>
