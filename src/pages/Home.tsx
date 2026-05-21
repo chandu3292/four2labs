@@ -14,7 +14,7 @@ export default function Home() {
           <div>
             <span className="eyebrow">Tech partners for growing businesses</span>
             <h1>We build the tech.<br /><span className="gradient-text">You grow the business.</span></h1>
-            <p className="lead">From your first website to AI that answers your phone - we design, build and look after the technology that powers your business, so you can focus on serving customers.</p>
+            <p className="lead">From your first website to AI that automates your work - we design, build and look after the technology that powers your business, so you can focus on serving customers.</p>
             <div className="hero-actions">
               <Link to="/services" className="btn btn-primary">See what we do →</Link>
               <Link to="/contact" className="btn btn-ghost">Get a free consultation</Link>

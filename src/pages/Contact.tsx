@@ -4,7 +4,7 @@ import { usePageMeta } from '../lib/usePageMeta'
 export default function Contact() {
   usePageMeta({
     title: 'Contact - Free 30-min Tech Consultation | four2labs',
-    description: 'Tell us about your business. Free 30-minute consultation, no sales pressure. We reply within one working day. Email hello@four2labs.com or call +91 93906 94802.',
+    description: 'Tell us about your business. Free 30-minute consultation, no sales pressure. We reply within one working day. Email four2labs@gmail.com or call +91 93906 94802.',
     canonical: 'https://four2labs.com/contact',
   })
   const [submitted, setSubmitted] = useState(false)
@@ -21,7 +21,7 @@ export default function Contact() {
     setSubmitting(true)
     setError(null)
     try {
-      const res = await fetch('https://formsubmit.co/ajax/hello@four2labs.com', {
+      const res = await fetch('https://formsubmit.co/ajax/four2labs@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
@@ -38,7 +38,7 @@ export default function Contact() {
         document.getElementById('form-success')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       }, 50)
     } catch {
-      setError('Something went wrong. Please email hello@four2labs.com directly.')
+      setError('Something went wrong. Please email four2labs@gmail.com directly.')
     } finally {
       setSubmitting(false)
     }
@@ -109,7 +109,7 @@ export default function Contact() {
           <div className="contact-info reveal">
             <div className="info-card">
               <div className="ic-icon">✉</div>
-              <div><h4>Email us</h4><p><a href="mailto:hello@four2labs.com" style={{ color: 'var(--text)' }}>hello@four2labs.com</a></p></div>
+              <div><h4>Email us</h4><p><a href="mailto:four2labs@gmail.com" style={{ color: 'var(--text)' }}>four2labs@gmail.com</a></p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon">☎</div>
