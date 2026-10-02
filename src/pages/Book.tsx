@@ -136,7 +136,7 @@ export default function Book() {
                     </div>
                     <div className="field">
                       <label htmlFor="b-phone">Phone / WhatsApp <span style={{ color: 'var(--muted)' }}>(optional)</span></label>
-                      <input id="b-phone" name="phone" type="tel" placeholder="+91 98765 43210" />
+                      <input id="b-phone" name="phone" type="tel" placeholder="Your phone number" />
                     </div>
                     <div className="field">
                       <label htmlFor="b-topic">What would you like to talk about?</label>

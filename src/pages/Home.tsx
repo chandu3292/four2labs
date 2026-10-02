@@ -72,7 +72,7 @@ export default function Home() {
 
       <DemoVideo />
 
-      <section>
+      <section style={{ background: 'var(--bg-2)' }}>
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">What we do</span>
@@ -109,7 +109,7 @@ export default function Home() {
 
       <RecentWork />
 
-      <section>
+      <section style={{ background: 'var(--bg-2)' }}>
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">How we work</span>
@@ -157,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Founder />
+      <Founder tinted />
 
       <section>
         <div className="container">

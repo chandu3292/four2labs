@@ -135,7 +135,7 @@ export default function Contact() {
             </div>
             <div className="info-card">
               <div className="ic-icon"><Clock size={18} /></div>
-              <div><h4>Working hours</h4><p>Monday - Saturday<br />9:00 AM - 7:00 PM IST</p></div>
+              <div><h4>Response time</h4><p>Within one working day,<br />usually much sooner</p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon"><Earth size={18} /></div>

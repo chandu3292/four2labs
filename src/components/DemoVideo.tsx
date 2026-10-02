@@ -21,7 +21,7 @@ export default function DemoVideo() {
   }
 
   return (
-    <section className="demo">
+    <section className="demo" id="demo">
       <div className="container">
         <div className="section-head reveal">
           <span className="eyebrow">See it in action</span>

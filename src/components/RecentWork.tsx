@@ -51,7 +51,7 @@ const products = [
     tag: 'Clinics · Restaurants · Service businesses',
     title: 'AI Receptionist',
     pitch: 'Never miss a customer call again. It answers 24/7, talks naturally and books straight into your calendar.',
-    points: ['Answers calls day and night, in English, Telugu and Tamil', 'Books, confirms and follows up on appointments', 'Every caller saved as a lead with notes'],
+    points: ['Answers calls day and night, in multiple languages', 'Books, confirms and follows up on appointments', 'Every caller saved as a lead with notes'],
     Preview: ReceptionistPreview,
   },
   {
@@ -72,7 +72,7 @@ const products = [
 
 export default function RecentWork() {
   return (
-    <section style={{ background: 'var(--bg-2)' }}>
+    <section>
       <div className="container">
         <div className="section-head reveal">
           <span className="eyebrow">Our products</span>
