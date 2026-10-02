@@ -1,5 +1,10 @@
+import { Link } from 'react-router-dom'
+import { CalendarCheck, Clock, Earth, Mail, Phone } from 'lucide-react'
 import { useState, FormEvent } from 'react'
+import { track } from '@vercel/analytics'
 import { usePageMeta } from '../lib/usePageMeta'
+import { BOOKING_PATH, whatsappLink } from '../lib/contact'
+import { prefetchSlots } from '../lib/slots'
 
 export default function Contact() {
   usePageMeta({
@@ -18,6 +23,13 @@ export default function Contact() {
     const data: Record<string, string> = {}
     formData.forEach((v, k) => { data[k] = v as string })
 
+    // Bots fill the hidden honeypot field; pretend success and drop it
+    if (data._honey) {
+      setSubmitted(true)
+      form.reset()
+      return
+    }
+
     setSubmitting(true)
     setError(null)
     try {
@@ -31,14 +43,18 @@ export default function Contact() {
           _template: 'box',
         }),
       })
-      if (!res.ok) throw new Error('Submission failed')
+      // FormSubmit answers 200 even when it did not deliver (e.g. form not activated),
+      // so trust only its success flag
+      const json = await res.json().catch(() => null)
+      if (!res.ok || String(json?.success) !== 'true') throw new Error(json?.message || 'Submission failed')
+      track('lead', { interest: data.interest || 'not set' })
       setSubmitted(true)
       form.reset()
       setTimeout(() => {
         document.getElementById('form-success')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       }, 50)
     } catch {
-      setError('Something went wrong. Please email four2labs@gmail.com directly.')
+      setError('Your message could not be sent. Please WhatsApp us or email four2labs@gmail.com directly.')
     } finally {
       setSubmitting(false)
     }
@@ -60,6 +76,8 @@ export default function Contact() {
             <div id="form-success" className={`form-success ${submitted ? 'show' : ''}`}>
               ✓ Thanks! Your message has been received. We'll get back to you within one working day.
             </div>
+
+            <input type="text" name="_honey" className="hp-field" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
             <div className="field">
               <label htmlFor="name">Your name</label>
@@ -108,24 +126,24 @@ export default function Contact() {
 
           <div className="contact-info reveal">
             <div className="info-card">
-              <div className="ic-icon">✉</div>
+              <div className="ic-icon"><Mail size={18} /></div>
               <div><h4>Email us</h4><p><a href="mailto:four2labs@gmail.com" style={{ color: 'var(--text)' }}>four2labs@gmail.com</a></p></div>
             </div>
             <div className="info-card">
-              <div className="ic-icon">☎</div>
-              <div><h4>Call or WhatsApp</h4><p><a href="tel:+919390694802" style={{ color: 'var(--text)' }}>+91 93906 94802</a></p></div>
+              <div className="ic-icon"><Phone size={18} /></div>
+              <div><h4>Call or WhatsApp</h4><p><a href="tel:+919390694802" style={{ color: 'var(--text)' }}>+91 93906 94802</a><br /><a href={whatsappLink("Hi four2labs! I'd like to know more about your services.")} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click')} style={{ color: 'var(--good)', fontWeight: 600 }}>Chat on WhatsApp →</a></p></div>
             </div>
             <div className="info-card">
-              <div className="ic-icon">⌚</div>
+              <div className="ic-icon"><Clock size={18} /></div>
               <div><h4>Working hours</h4><p>Monday - Saturday<br />9:00 AM - 7:00 PM IST</p></div>
             </div>
             <div className="info-card">
-              <div className="ic-icon">🌍</div>
+              <div className="ic-icon"><Earth size={18} /></div>
               <div><h4>Where we work</h4><p>Remote-first, serving businesses all over the world.</p></div>
             </div>
             <div className="info-card" style={{ background: 'linear-gradient(135deg, rgba(123,92,255,0.18), rgba(91,140,255,0.12))', borderColor: 'rgba(123,92,255,0.35)' }}>
-              <div className="ic-icon">★</div>
-              <div><h4>Prefer a quick call?</h4><p>Mention "30-min intro" in your message and we'll set up a free, no-pressure call at a time that works for you.</p></div>
+              <div className="ic-icon"><CalendarCheck size={18} /></div>
+              <div><h4>Prefer a quick call?</h4><p style={{ marginBottom: 12 }}>Book a free, no-pressure 30-minute call at a time that works for you.</p><Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Book a free 30-min call →</Link></div>
             </div>
           </div>
         </div>

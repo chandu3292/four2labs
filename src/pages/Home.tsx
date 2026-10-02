@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom'
+import { Bot, ChartColumn, Cog, Compass, Globe, LifeBuoy, MessageCircle, Zap } from 'lucide-react'
+import { track } from '@vercel/analytics'
 import { usePageMeta } from '../lib/usePageMeta'
+import { BOOKING_PATH } from '../lib/contact'
+import { prefetchSlots } from '../lib/slots'
+import RecentWork from '../components/RecentWork'
+import Founder from '../components/Founder'
 
 export default function Home() {
   usePageMeta({
@@ -72,22 +78,22 @@ export default function Home() {
           </div>
           <div className="cards">
             <div className="card reveal">
-              <div className="icon">🌐</div>
+              <div className="icon"><Globe size={24} /></div>
               <h3>Websites &amp; Apps</h3>
               <p>A strong online presence - beautiful websites, mobile apps, and the systems behind them that quietly do the heavy lifting.</p>
             </div>
             <div className="card reveal">
-              <div className="icon">🤖</div>
+              <div className="icon"><Bot size={24} /></div>
               <h3>AI for your business</h3>
               <p>AI assistants that answer calls, book appointments, run your marketing and handle the boring stuff - so you don't have to.</p>
             </div>
             <div className="card reveal">
-              <div className="icon">📊</div>
+              <div className="icon"><ChartColumn size={24} /></div>
               <h3>CRM Dashboards &amp; Insights</h3>
               <p>See your sales, customers and operations clearly. Turn raw numbers into simple decisions you can act on today.</p>
             </div>
             <div className="card reveal">
-              <div className="icon">⚙️</div>
+              <div className="icon"><Cog size={24} /></div>
               <h3>Automation &amp; Care</h3>
               <p>Automate the repetitive work, then we look after everything monthly so it keeps running smoothly in the background.</p>
             </div>
@@ -98,7 +104,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ background: 'var(--bg-2)' }}>
+      <RecentWork />
+
+      <section>
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">How we work</span>
@@ -126,19 +134,19 @@ export default function Home() {
           <div className="reveal">
             <div className="hero-card">
               <div className="hc-row">
-                <div className="hc-icon">⚡</div>
+                <div className="hc-icon"><Zap size={18} /></div>
                 <div><div className="hc-title">Fast delivery</div><div className="hc-sub">Live in weeks, not months</div></div>
               </div>
               <div className="hc-row">
-                <div className="hc-icon">🧭</div>
+                <div className="hc-icon"><Compass size={18} /></div>
                 <div><div className="hc-title">Clear direction</div><div className="hc-sub">Plans you can actually understand</div></div>
               </div>
               <div className="hc-row">
-                <div className="hc-icon">🛟</div>
+                <div className="hc-icon"><LifeBuoy size={18} /></div>
                 <div><div className="hc-title">Ongoing care</div><div className="hc-sub">We stick around after launch</div></div>
               </div>
               <div className="hc-row">
-                <div className="hc-icon">💬</div>
+                <div className="hc-icon"><MessageCircle size={18} /></div>
                 <div><div className="hc-title">Direct contact</div><div className="hc-sub">Talk to the people building it</div></div>
               </div>
             </div>
@@ -146,12 +154,17 @@ export default function Home() {
         </div>
       </section>
 
+      <Founder />
+
       <section>
         <div className="container">
           <div className="cta reveal">
             <h2>Have an idea? Or a problem?</h2>
             <p>Tell us about your business - even if you're not sure what you need yet. We'll help you figure out what's worth building.</p>
-            <Link to="/contact" className="btn btn-primary">Start a conversation →</Link>
+            <div className="hero-actions" style={{ justifyContent: 'center', marginBottom: 0 }}>
+              <Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Book a free 30-min call →</Link>
+              <Link to="/contact" className="btn btn-ghost">Send us a message</Link>
+            </div>
           </div>
         </div>
       </section>

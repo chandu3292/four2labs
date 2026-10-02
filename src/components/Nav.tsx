@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 
 export default function Nav() {
@@ -31,7 +32,7 @@ export default function Nav() {
         <div className="nav-actions">
           <ThemeToggle />
           <Link to="/contact" className="btn btn-primary nav-cta" onClick={close}>Let's talk →</Link>
-          <button className="nav-toggle" aria-label="Toggle menu" onClick={() => setOpen(o => !o)}>☰</button>
+          <button className="nav-toggle" aria-label="Toggle menu" onClick={() => setOpen(o => !o)}>{open ? <X size={20} /> : <Menu size={20} />}</button>
         </div>
       </div>
     </header>

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
+import { Compass, Earth, Eye, Handshake, Infinity, MessageCircle, Target, TrendingUp } from 'lucide-react'
 import { usePageMeta } from '../lib/usePageMeta'
+import Founder from '../components/Founder'
 
 export default function About() {
   usePageMeta({
@@ -28,14 +30,16 @@ export default function About() {
           </div>
           <div className="reveal">
             <div className="hero-card">
-              <div className="hc-row"><div className="hc-icon">🎯</div><div><div className="hc-title">Mission</div><div className="hc-sub">Help everyday businesses grow with smart tech</div></div></div>
-              <div className="hc-row"><div className="hc-icon">👀</div><div><div className="hc-title">Vision</div><div className="hc-sub">A world where every business has a great tech partner</div></div></div>
-              <div className="hc-row"><div className="hc-icon">🤝</div><div><div className="hc-title">Promise</div><div className="hc-sub">Honest advice, clear pricing, no jargon</div></div></div>
-              <div className="hc-row"><div className="hc-icon">🌍</div><div><div className="hc-title">Working with</div><div className="hc-sub">Businesses all over the world</div></div></div>
+              <div className="hc-row"><div className="hc-icon"><Target size={18} /></div><div><div className="hc-title">Mission</div><div className="hc-sub">Help everyday businesses grow with smart tech</div></div></div>
+              <div className="hc-row"><div className="hc-icon"><Eye size={18} /></div><div><div className="hc-title">Vision</div><div className="hc-sub">A world where every business has a great tech partner</div></div></div>
+              <div className="hc-row"><div className="hc-icon"><Handshake size={18} /></div><div><div className="hc-title">Promise</div><div className="hc-sub">Honest advice, clear pricing, no jargon</div></div></div>
+              <div className="hc-row"><div className="hc-icon"><Earth size={18} /></div><div><div className="hc-title">Working with</div><div className="hc-sub">Businesses all over the world</div></div></div>
             </div>
           </div>
         </div>
       </section>
+
+      <Founder />
 
       <section style={{ background: 'var(--bg-2)' }}>
         <div className="container">
@@ -63,10 +67,10 @@ export default function About() {
             <p>Here's how working with us tends to feel different from the alternatives.</p>
           </div>
           <div className="cards">
-            <div className="card reveal"><div className="icon">💬</div><h3>Conversations, not pitches</h3><p>Our first call isn't a sales meeting. It's just us understanding your business, your customers, and what's slowing you down.</p></div>
-            <div className="card reveal"><div className="icon">🧭</div><h3>One team, end to end</h3><p>Strategy, design, code, AI, support - all from the same team that knows your business inside out.</p></div>
-            <div className="card reveal"><div className="icon">🎁</div><h3>Outcomes, not deliverables</h3><p>We measure ourselves by what changes we bring to your business - more bookings, less chaos, happier customers.</p></div>
-            <div className="card reveal"><div className="icon">🔄</div><h3>Long-term partner</h3><p>Most clients stay with us long after launch - because tech that grows your business needs ongoing care, not a one-time push.</p></div>
+            <div className="card reveal"><div className="icon"><MessageCircle size={24} /></div><h3>Conversations, not pitches</h3><p>Our first call isn't a sales meeting. It's just us understanding your business, your customers, and what's slowing you down.</p></div>
+            <div className="card reveal"><div className="icon"><Compass size={24} /></div><h3>One team, end to end</h3><p>Strategy, design, code, AI, support - all from the same team that knows your business inside out.</p></div>
+            <div className="card reveal"><div className="icon"><TrendingUp size={24} /></div><h3>Outcomes, not deliverables</h3><p>We measure ourselves by what changes we bring to your business - more bookings, less chaos, happier customers.</p></div>
+            <div className="card reveal"><div className="icon"><Infinity size={24} /></div><h3>Long-term partner</h3><p>Most clients stay with us long after launch - because tech that grows your business needs ongoing care, not a one-time push.</p></div>
           </div>
         </div>
       </section>

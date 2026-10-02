@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ChartColumn, ChartLine, Headset, Layers, Lightbulb, MapPin, Megaphone, Monitor, ReceiptText, Smartphone, Wrench, Zap } from 'lucide-react'
 import { usePageMeta } from '../lib/usePageMeta'
 
 export default function Services() {
@@ -25,9 +26,9 @@ export default function Services() {
             <p>How your customers find you, learn about you and do business with you.</p>
           </div>
           <div className="cards">
-            <div className="card reveal"><span className="tag">Mobile</span><div className="icon">📱</div><h3>Mobile Apps</h3><p>Custom apps for iPhone and Android that put your business in your customers' pocket - bookings, orders, loyalty, anything you need.</p></div>
-            <div className="card reveal"><span className="tag">Full build</span><div className="icon">🧩</div><h3>Website + Backend</h3><p>A complete website with the smart system behind it that handles your data, users, orders and everything else, automatically.</p></div>
-            <div className="card reveal"><span className="tag">Quick start</span><div className="icon">✨</div><h3>Website Only</h3><p>A clean, modern website that looks great and tells your story - perfect when you just need a strong first impression online.</p></div>
+            <div className="card reveal"><span className="tag">Mobile</span><div className="icon"><Smartphone size={24} /></div><h3>Mobile Apps</h3><p>Custom apps for iPhone and Android that put your business in your customers' pocket - bookings, orders, loyalty, anything you need.</p></div>
+            <div className="card reveal"><span className="tag">Full build</span><div className="icon"><Layers size={24} /></div><h3>Website + Backend</h3><p>A complete website with the smart system behind it that handles your data, users, orders and everything else, automatically.</p></div>
+            <div className="card reveal"><span className="tag">Quick start</span><div className="icon"><Monitor size={24} /></div><h3>Website Only</h3><p>A clean, modern website that looks great and tells your story - perfect when you just need a strong first impression online.</p></div>
           </div>
         </div>
       </section>
@@ -40,10 +41,10 @@ export default function Services() {
             <p>Modules that quietly remove the chaos from how you take orders, track work and report on it.</p>
           </div>
           <div className="cards">
-            <div className="card reveal"><span className="tag">Orders</span><div className="icon">🧾</div><h3>Orders Module</h3><p>Take and manage customer orders in one organised place - no more scattered messages, missed orders, or messy spreadsheets.</p></div>
-            <div className="card reveal"><span className="tag">Tracking</span><div className="icon">📍</div><h3>Tracking Module</h3><p>Real-time tracking so you and your customers always know exactly where deliveries, shipments or jobs stand.</p></div>
-            <div className="card reveal"><span className="tag">Visibility</span><div className="icon">📊</div><h3>CRM Dashboards</h3><p>Clear, simple dashboards that show your sales, customers and operations at a glance - no spreadsheets needed.</p></div>
-            <div className="card reveal"><span className="tag">Insight</span><div className="icon">📈</div><h3>Data Analysis</h3><p>We dig into your numbers and turn them into plain-English insights you can use to make smarter business decisions.</p></div>
+            <div className="card reveal"><span className="tag">Orders</span><div className="icon"><ReceiptText size={24} /></div><h3>Orders Module</h3><p>Take and manage customer orders in one organised place - no more scattered messages, missed orders, or messy spreadsheets.</p></div>
+            <div className="card reveal"><span className="tag">Tracking</span><div className="icon"><MapPin size={24} /></div><h3>Tracking Module</h3><p>Real-time tracking so you and your customers always know exactly where deliveries, shipments or jobs stand.</p></div>
+            <div className="card reveal"><span className="tag">Visibility</span><div className="icon"><ChartColumn size={24} /></div><h3>CRM Dashboards</h3><p>Clear, simple dashboards that show your sales, customers and operations at a glance - no spreadsheets needed.</p></div>
+            <div className="card reveal"><span className="tag">Insight</span><div className="icon"><ChartLine size={24} /></div><h3>Data Analysis</h3><p>We dig into your numbers and turn them into plain-English insights you can use to make smarter business decisions.</p></div>
           </div>
         </div>
       </section>
@@ -56,9 +57,9 @@ export default function Services() {
             <p>Smart assistants that work around the clock so you can focus on the things only you can do.</p>
           </div>
           <div className="cards">
-            <div className="card reveal"><span className="tag">24/7</span><div className="icon">🎧</div><h3>AI Receptionist &amp; Booking</h3><p>An AI that answers your calls, books appointments and answers customer questions - day, night, weekends, holidays. You never miss a customer.</p></div>
-            <div className="card reveal"><span className="tag">Marketing</span><div className="icon">📣</div><h3>AI Marketing Agent</h3><p>AI that handles your marketing - writing posts, sending follow-ups, replying to leads - so your brand is always working, even when you aren't.</p></div>
-            <div className="card reveal"><span className="tag">Automation</span><div className="icon">⚡</div><h3>AI Workflows</h3><p>Connect your tools and let AI do the repetitive work - invoices, emails, data entry, reminders. Hours back in your week.</p></div>
+            <div className="card reveal"><span className="tag">24/7</span><div className="icon"><Headset size={24} /></div><h3>AI Receptionist &amp; Booking</h3><p>An AI that answers your calls, books appointments and answers customer questions - day, night, weekends, holidays. You never miss a customer.</p></div>
+            <div className="card reveal"><span className="tag">Marketing</span><div className="icon"><Megaphone size={24} /></div><h3>AI Marketing Agent</h3><p>AI that handles your marketing - writing posts, sending follow-ups, replying to leads - so your brand is always working, even when you aren't.</p></div>
+            <div className="card reveal"><span className="tag">Automation</span><div className="icon"><Zap size={24} /></div><h3>AI Workflows</h3><p>Connect your tools and let AI do the repetitive work - invoices, emails, data entry, reminders. Hours back in your week.</p></div>
           </div>
         </div>
       </section>
@@ -71,8 +72,8 @@ export default function Services() {
             <p>Tech needs care. We stay with you so everything keeps running smoothly - and keeps getting better.</p>
           </div>
           <div className="cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-            <div className="card reveal"><span className="tag">Monthly</span><div className="icon">🛠️</div><h3>Maintenance &amp; Updates</h3><p>Regular check-ups, security updates, fixes and small improvements - so your tech stays fast, safe and reliable, every single month.</p></div>
-            <div className="card reveal"><span className="tag">On request</span><div className="icon">💡</div><h3>Custom Tech Solutions</h3><p>Need something that isn't on this list? Tell us about it. We've built custom tools, integrations and platforms for clients with very specific needs.</p></div>
+            <div className="card reveal"><span className="tag">Monthly</span><div className="icon"><Wrench size={24} /></div><h3>Maintenance &amp; Updates</h3><p>Regular check-ups, security updates, fixes and small improvements - so your tech stays fast, safe and reliable, every single month.</p></div>
+            <div className="card reveal"><span className="tag">On request</span><div className="icon"><Lightbulb size={24} /></div><h3>Custom Tech Solutions</h3><p>Need something that isn't on this list? Tell us about it. We've built custom tools, integrations and platforms for clients with very specific needs.</p></div>
           </div>
         </div>
       </section>

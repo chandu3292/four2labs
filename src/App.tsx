@@ -4,10 +4,12 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Book from './pages/Book'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -38,9 +40,11 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/book" element={<Book />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <WhatsAppButton />
       <Analytics />
       <SpeedInsights />
     </>
