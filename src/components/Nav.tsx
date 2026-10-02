@@ -32,7 +32,7 @@ export default function Nav() {
           <NavLink to="/about" onClick={close}>About</NavLink>
           <NavLink to="/contact" onClick={close}>Contact</NavLink>
           <Link to="/book" className="btn btn-primary nav-sheet-cta" onClick={close}>Book a free 30-min call →</Link>
-          <p className="nav-sheet-note">four2labs@gmail.com · Replies within one working day</p>
+          <p className="nav-sheet-note">hello@four2labs.com · Replies within one working day</p>
         </nav>
 
         <div className="nav-actions">

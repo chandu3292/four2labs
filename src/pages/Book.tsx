@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useMemo, useState, FormEvent } from 'react'
 import { track } from '@vercel/analytics'
 import { usePageMeta } from '../lib/usePageMeta'
@@ -159,6 +160,7 @@ export default function Book() {
                     <button type="submit" disabled={submitting} className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', opacity: submitting ? 0.6 : 1 }}>
                       {submitting ? 'Booking…' : 'Confirm booking →'}
                     </button>
+                    <p className="form-note">By booking, you agree to our <Link to="/privacy">Privacy Policy</Link>.</p>
                   </form>
                 )}
                 {!slot && error && <p style={{ color: '#ff6b6b', fontSize: 14, margin: '16px 0 0', textAlign: 'center' }}>{error}</p>}

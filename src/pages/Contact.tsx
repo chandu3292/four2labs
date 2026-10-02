@@ -9,7 +9,7 @@ import { prefetchSlots } from '../lib/slots'
 export default function Contact() {
   usePageMeta({
     title: 'Contact - Free 30-min Tech Consultation | four2labs',
-    description: 'Tell us about your business. Free 30-minute consultation, no sales pressure. We reply within one working day. Email four2labs@gmail.com or call +91 93906 94802.',
+    description: 'Tell us about your business. Free 30-minute consultation, no sales pressure. We reply within one working day. Email hello@four2labs.com or call +91 93906 94802.',
     canonical: 'https://four2labs.com/contact',
   })
   const [submitted, setSubmitted] = useState(false)
@@ -54,7 +54,7 @@ export default function Contact() {
         document.getElementById('form-success')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       }, 50)
     } catch {
-      setError('Your message could not be sent. Please WhatsApp us or email four2labs@gmail.com directly.')
+      setError('Your message could not be sent. Please WhatsApp us or email hello@four2labs.com directly.')
     } finally {
       setSubmitting(false)
     }
@@ -120,14 +120,14 @@ export default function Contact() {
               {submitting ? 'Sending…' : 'Send message →'}
             </button>
             <p style={{ fontSize: 13, color: 'var(--muted)', margin: '14px 0 0', textAlign: 'center' }}>
-              We usually reply within one working day.
+              We usually reply within one working day. By sending, you agree to our <Link to="/privacy">Privacy Policy</Link>.
             </p>
           </form>
 
           <div className="contact-info reveal">
             <div className="info-card">
               <div className="ic-icon"><Mail size={18} /></div>
-              <div><h4>Email us</h4><p><a href="mailto:four2labs@gmail.com" style={{ color: 'var(--text)' }}>four2labs@gmail.com</a></p></div>
+              <div><h4>Email us</h4><p><a href="mailto:hello@four2labs.com" style={{ color: 'var(--text)' }}>hello@four2labs.com</a></p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon"><Phone size={18} /></div>

@@ -1178,3 +1178,13 @@ p { color: var(--text-dim); margin: 0 0 16px; }
   .menu-open .mobile-bar, .menu-open .chat-panel { display: none; }
   .mobile-bar ~ .chat-panel { bottom: calc(80px + env(safe-area-inset-bottom)); }
 }
+
+/* ---------- Legal pages ---------- */
+.legal { max-width: 760px; }
+.legal h2 { font-size: 22px; margin: 36px 0 12px; }
+.legal p, .legal li { font-size: 16px; line-height: 1.7; color: var(--text-dim); }
+.legal ul { padding-left: 20px; margin: 0 0 16px; display: grid; gap: 8px; }
+.legal strong { color: var(--text); }
+.legal a, .form-note a, .footer-bottom a { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+.footer-bottom a { color: var(--text-dim); }
+.form-note { font-size: 13px; color: var(--muted); text-align: center; margin: 12px 0 0; }

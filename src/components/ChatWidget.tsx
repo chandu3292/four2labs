@@ -76,7 +76,7 @@ const STEPS: Record<string, Step> = {
     text: <>Of course! Reach us whichever way you prefer - we usually reply within one working day.</>,
     actions: [
       { label: 'WhatsApp us', href: whatsappLink("Hi four2labs! I'd like to know more about your services.") },
-      { label: 'Email four2labs@gmail.com', href: 'mailto:four2labs@gmail.com' },
+      { label: 'Email hello@four2labs.com', href: 'mailto:hello@four2labs.com' },
       { label: 'Call +91 93906 94802', href: 'tel:+919390694802' },
       { label: 'Send a message', to: '/contact' },
       { label: 'Book a call', to: BOOKING_PATH },

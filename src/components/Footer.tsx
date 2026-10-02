@@ -33,13 +33,13 @@ export default function Footer() {
           <div>
             <h4>Get in touch</h4>
             <ul>
-              <li><a href="mailto:four2labs@gmail.com">four2labs@gmail.com</a></li>
+              <li><a href="mailto:hello@four2labs.com">hello@four2labs.com</a></li>
               <li><a href="tel:+919390694802">+91 93906 94802</a></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {year} four2labs. All rights reserved.</span>
+          <span>© {year} four2labs. All rights reserved. · <Link to="/privacy">Privacy Policy</Link></span>
           <span>Made with care for growing businesses</span>
         </div>
       </div>
