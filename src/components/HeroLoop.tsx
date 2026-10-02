@@ -29,7 +29,9 @@ export default function HeroLoop() {
         loop
         playsInline
         aria-label="Short silent clip of the four2labs AI receptionist booking a meeting"
-      />
+      >
+        <track kind="captions" src="/video/hero-loop.en.vtt" srcLang="en" label="English" />
+      </video>
       <button type="button" className="hero-loop-play" onClick={playDemo}>
         <span className="hero-loop-icon"><Play size={16} fill="currentColor" /></span>
         Watch the 1-min demo

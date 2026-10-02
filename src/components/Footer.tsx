@@ -13,7 +13,7 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h4>Pages</h4>
+            <h2 className="footer-title">Pages</h2>
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/services">Services</Link></li>
@@ -22,7 +22,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Services</h4>
+            <h2 className="footer-title">Services</h2>
             <ul>
               <li><Link to="/services#websites">Websites &amp; Apps</Link></li>
               <li><Link to="/services#ai">AI Assistance</Link></li>
@@ -31,7 +31,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Get in touch</h4>
+            <h2 className="footer-title">Get in touch</h2>
             <ul>
               <li><a href="mailto:hello@four2labs.com">hello@four2labs.com</a></li>
               <li><a href="tel:+919390694802">+91 93906 94802</a></li>

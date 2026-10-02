@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import Nav from './components/Nav'
@@ -7,12 +7,13 @@ import Footer from './components/Footer'
 import ChatWidget from './components/ChatWidget'
 import MobileBar from './components/MobileBar'
 import Home from './pages/Home'
-import Services from './pages/Services'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Book from './pages/Book'
-import Privacy from './pages/Privacy'
-import NotFound from './pages/NotFound'
+// Home loads with the first visit; other pages download only when visited
+const Services = lazy(() => import('./pages/Services'))
+const About = lazy(() => import('./pages/About'))
+const Contact = lazy(() => import('./pages/Contact'))
+const Book = lazy(() => import('./pages/Book'))
+const Privacy = lazy(() => import('./pages/Privacy'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 export default function App() {
   const { pathname } = useLocation()
@@ -30,22 +31,30 @@ export default function App() {
       },
       { threshold: 0.12 },
     )
-    document.querySelectorAll('.reveal:not(.visible)').forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
+    const watch = () => document.querySelectorAll('.reveal:not(.visible)').forEach((el) => observer.observe(el))
+    watch()
+    // Lazy-loaded pages arrive after this effect runs, so pick up their sections too
+    const mutations = new MutationObserver(watch)
+    mutations.observe(document.getElementById('root')!, { childList: true, subtree: true })
+    return () => { observer.disconnect(); mutations.disconnect() }
   }, [pathname])
 
   return (
     <>
       <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/book" element={<Book />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main>
+        <Suspense fallback={<div style={{ minHeight: '70vh' }} />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/book" element={<Book />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </main>
       <Footer />
       <MobileBar />
       <ChatWidget />

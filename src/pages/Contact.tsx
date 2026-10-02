@@ -127,23 +127,23 @@ export default function Contact() {
           <div className="contact-info reveal">
             <div className="info-card">
               <div className="ic-icon"><Mail size={18} /></div>
-              <div><h4>Email us</h4><p><a href="mailto:hello@four2labs.com" style={{ color: 'var(--text)' }}>hello@four2labs.com</a></p></div>
+              <div><h3 className="info-title">Email us</h3><p><a href="mailto:hello@four2labs.com" style={{ color: 'var(--text)' }}>hello@four2labs.com</a></p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon"><Phone size={18} /></div>
-              <div><h4>Call or WhatsApp</h4><p><a href="tel:+919390694802" style={{ color: 'var(--text)' }}>+91 93906 94802</a><br /><a href={whatsappLink("Hi four2labs! I'd like to know more about your services.")} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click')} style={{ color: 'var(--good)', fontWeight: 600 }}>Chat on WhatsApp →</a></p></div>
+              <div><h3 className="info-title">Call or WhatsApp</h3><p><a href="tel:+919390694802" style={{ color: 'var(--text)' }}>+91 93906 94802</a><br /><a href={whatsappLink("Hi four2labs! I'd like to know more about your services.")} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click')} style={{ color: 'var(--good)', fontWeight: 600 }}>Chat on WhatsApp →</a></p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon"><Clock size={18} /></div>
-              <div><h4>Response time</h4><p>Within one working day,<br />usually much sooner</p></div>
+              <div><h3 className="info-title">Response time</h3><p>Within one working day,<br />usually much sooner</p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon"><Earth size={18} /></div>
-              <div><h4>Where we work</h4><p>Remote-first, serving businesses all over the world.</p></div>
+              <div><h3 className="info-title">Where we work</h3><p>Remote-first, serving businesses all over the world.</p></div>
             </div>
             <div className="info-card" style={{ background: 'linear-gradient(135deg, rgba(123,92,255,0.18), rgba(91,140,255,0.12))', borderColor: 'rgba(123,92,255,0.35)' }}>
               <div className="ic-icon"><CalendarCheck size={18} /></div>
-              <div><h4>Prefer a quick call?</h4><p style={{ marginBottom: 12 }}>Book a free, no-pressure 30-minute call at a time that works for you.</p><Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Book a free 30-min call →</Link></div>
+              <div><h3 className="info-title">Prefer a quick call?</h3><p style={{ marginBottom: 12 }}>Book a free, no-pressure 30-minute call at a time that works for you.</p><Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Book a free 30-min call →</Link></div>
             </div>
           </div>
         </div>

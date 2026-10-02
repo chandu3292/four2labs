@@ -65,7 +65,7 @@
 html, body { margin: 0; padding: 0; }
 
 body {
-  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: "Inter Variable", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -118,7 +118,7 @@ section {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  font-family: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
   margin: 0 0 16px;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -191,7 +191,7 @@ p { color: var(--text-dim); margin: 0 0 16px; }
 .brand-mark {
   width: 160px;
   height: 44px;
-  background: url("/logo.png") center/contain no-repeat;
+  background: url("/logo-nav.webp") center/contain no-repeat;
 }
 
 .nav-links {
@@ -404,7 +404,7 @@ p { color: var(--text-dim); margin: 0 0 16px; }
   content: "0" counter(step);
   position: absolute;
   top: 18px; right: 22px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", sans-serif;
   font-size: 36px;
   font-weight: 800;
   color: transparent;
@@ -428,7 +428,7 @@ p { color: var(--text-dim); margin: 0 0 16px; }
   text-align: center;
 }
 .stat-num {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", sans-serif;
   font-size: 34px;
   font-weight: 800;
   background: var(--gradient);
@@ -476,7 +476,7 @@ p { color: var(--text-dim); margin: 0 0 16px; }
   .footer-grid > :first-child { grid-column: 1 / -1; }
   .footer a { overflow-wrap: anywhere; }
 }
-.footer h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 16px; }
+.footer h4, .footer .footer-title { font-size: 14px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 16px; }
 .footer ul { list-style: none; padding: 0; margin: 0; }
 .footer li { margin-bottom: 10px; }
 .footer a { color: var(--text-dim); font-size: 14px; }
@@ -610,7 +610,7 @@ p { color: var(--text-dim); margin: 0 0 16px; }
   font-weight: 800;
   flex-shrink: 0;
 }
-.info-card h4 { margin: 0 0 4px; font-size: 15px; color: var(--text); text-transform: none; letter-spacing: normal; }
+.info-card h4, .info-card .info-title { margin: 0 0 4px; font-size: 15px; color: var(--text); text-transform: none; letter-spacing: normal; }
 .info-card p { margin: 0; font-size: 14px; }
 
 .form-success {
@@ -1007,14 +1007,22 @@ p { color: var(--text-dim); margin: 0 0 16px; }
   .product-body ul { gap: 6px; margin-bottom: 14px; }
   .product-body li { font-size: 13px; }
   .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+  /* 32px tap area around each small dot */
+  .carousel-dots { gap: 0; }
   .carousel-dots button {
-    width: 8px; height: 8px; padding: 0;
-    border: 0; border-radius: 999px;
-    background: var(--border);
+    width: 32px; height: 32px; padding: 0;
+    border: 0; background: none;
+    display: grid; place-items: center;
+  }
+  .carousel-dots button::before {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 999px;
     background-color: rgba(91, 63, 217, 0.25);
     transition: width 0.2s ease, background-color 0.2s ease;
   }
-  .carousel-dots button.active { width: 24px; background-color: var(--brand); }
+  .carousel-dots button.active::before { width: 24px; background-color: var(--brand); }
+  .footer a { display: inline-block; padding: 6px 0; }
 
   /* How we work: slim numbered timeline instead of 4 cards */
   .steps { grid-template-columns: 1fr; gap: 0; }
@@ -1050,7 +1058,7 @@ p { color: var(--text-dim); margin: 0 0 16px; }
   .founder { padding: 24px 18px; }
   .footer { padding: 36px 0 24px; }
   .footer-grid { gap: 20px 16px; margin-bottom: 24px; }
-  .footer h4 { margin-bottom: 10px; }
+  .footer h4, .footer .footer-title { margin-bottom: 10px; }
   .footer li { margin-bottom: 6px; }
 }
 
@@ -1106,7 +1114,7 @@ p { color: var(--text-dim); margin: 0 0 16px; }
   .contact-grid { gap: 20px; }
   .contact-info { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .info-card { flex-direction: column; gap: 8px; padding: 14px; }
-  .info-card h4 { font-size: 14px !important; }
+  .info-card h4, .info-card .info-title { font-size: 14px !important; }
   .info-card p { font-size: 13px !important; overflow-wrap: anywhere; }
   .info-card:last-child { grid-column: 1 / -1; }
 
@@ -1140,7 +1148,7 @@ p { color: var(--text-dim); margin: 0 0 16px; }
     overflow-y: auto;
   }
   .nav-links a:not(.btn) {
-    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+    font-family: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
     font-size: 24px !important;
     font-weight: 700;
     padding: 14px 8px !important;

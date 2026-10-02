@@ -52,7 +52,9 @@ export default function DemoVideo() {
               autoPlay
               playsInline
               preload="auto"
-            />
+            >
+              <track kind="captions" src="/video/four2labs-demo-short.en.vtt" srcLang="en" label="English" />
+            </video>
           ) : (
             <button type="button" className="demo-poster" onClick={start} aria-label="Play the four2labs AI receptionist demo video">
               <img src="/video/four2labs-demo-poster.jpg" alt="" width={1280} height={720} loading="lazy" />
