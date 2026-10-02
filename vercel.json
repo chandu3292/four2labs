@@ -1,32 +1,111 @@
 {
-  "regions": ["bom1"],
+  "regions": [
+    "bom1"
+  ],
   "rewrites": [
-    { "source": "/((?!api/|@|src/|node_modules/)[^.]*)", "destination": "/" }
+    {
+      "source": "/((?!api/|@|src/|node_modules/)[^.]*)",
+      "destination": "/"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Content-Security-Policy", "value": "frame-ancestors 'none'" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'none'"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/video/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/in",
+      "destination": "/?utm_source=linkedin&utm_medium=social&utm_campaign=bio",
+      "permanent": false
+    },
+    {
+      "source": "/ig",
+      "destination": "/?utm_source=instagram&utm_medium=social&utm_campaign=bio",
+      "permanent": false
+    },
+    {
+      "source": "/fb",
+      "destination": "/?utm_source=facebook&utm_medium=social&utm_campaign=bio",
+      "permanent": false
+    },
+    {
+      "source": "/x",
+      "destination": "/?utm_source=x&utm_medium=social&utm_campaign=bio",
+      "permanent": false
+    },
+    {
+      "source": "/yt",
+      "destination": "/?utm_source=youtube&utm_medium=video&utm_campaign=description",
+      "permanent": false
+    },
+    {
+      "source": "/wa",
+      "destination": "/?utm_source=whatsapp&utm_medium=messaging&utm_campaign=share",
+      "permanent": false
+    },
+    {
+      "source": "/mail",
+      "destination": "/?utm_source=email&utm_medium=email&utm_campaign=signature",
+      "permanent": false
+    },
+    {
+      "source": "/qr",
+      "destination": "/?utm_source=qr&utm_medium=offline&utm_campaign=card",
+      "permanent": false
+    },
+    {
+      "source": "/gmb",
+      "destination": "/?utm_source=google&utm_medium=business_profile&utm_campaign=listing",
+      "permanent": false
     }
   ]
 }
