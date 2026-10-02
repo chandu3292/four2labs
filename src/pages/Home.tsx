@@ -6,6 +6,7 @@ import { BOOKING_PATH } from '../lib/contact'
 import { prefetchSlots } from '../lib/slots'
 import RecentWork from '../components/RecentWork'
 import Founder from '../components/Founder'
+import DemoVideo from '../components/DemoVideo'
 
 export default function Home() {
   usePageMeta({
@@ -68,6 +69,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <DemoVideo />
 
       <section>
         <div className="container">
