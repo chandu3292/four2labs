@@ -7,6 +7,7 @@ import { prefetchSlots } from '../lib/slots'
 import RecentWork from '../components/RecentWork'
 import Founder from '../components/Founder'
 import DemoVideo from '../components/DemoVideo'
+import HeroLoop from '../components/HeroLoop'
 
 export default function Home() {
   usePageMeta({
@@ -33,40 +34,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-card reveal">
-            <div className="hc-row">
-              <div className="hc-icon">W</div>
-              <div>
-                <div className="hc-title">New website live</div>
-                <div className="hc-sub">Beautiful, fast, mobile-ready</div>
-              </div>
-              <span className="hc-pill">Done</span>
-            </div>
-            <div className="hc-row">
-              <div className="hc-icon">A</div>
-              <div>
-                <div className="hc-title">AI receptionist answering calls</div>
-                <div className="hc-sub">24/7, never misses a customer</div>
-              </div>
-              <span className="hc-pill">Live</span>
-            </div>
-            <div className="hc-row">
-              <div className="hc-icon">D</div>
-              <div>
-                <div className="hc-title">Sales dashboard</div>
-                <div className="hc-sub">Today's orders, at a glance</div>
-              </div>
-              <span className="hc-pill">+18%</span>
-            </div>
-            <div className="hc-row">
-              <div className="hc-icon">M</div>
-              <div>
-                <div className="hc-title">Marketing on autopilot</div>
-                <div className="hc-sub">AI handles posts &amp; follow-ups</div>
-              </div>
-              <span className="hc-pill">Auto</span>
-            </div>
-          </div>
+          <HeroLoop />
         </div>
       </section>
 

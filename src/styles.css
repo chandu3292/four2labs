@@ -921,3 +921,42 @@ p { color: var(--text-dim); margin: 0 0 16px; }
 .pv-c1 { background: rgba(124, 92, 255, 0.75); }
 .pv-c2 { background: rgba(91, 140, 255, 0.75); }
 .pv-c3 { background: rgba(46, 211, 164, 0.7); }
+
+/* ---------- Hero loop (replaces the static hero card) ---------- */
+.hero-loop {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #0b0f1a;
+  border: 1px solid rgba(157, 181, 255, 0.18);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.28);
+}
+.hero-loop video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.hero-loop-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 16px;
+  font-size: 13px; font-weight: 600;
+  color: #dfe5ff;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(157, 181, 255, 0.12);
+}
+.hero-loop-play {
+  position: absolute;
+  left: 16px; bottom: 16px;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  font-size: 14px; font-weight: 700;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease;
+}
+.hero-loop-play:hover { transform: translateY(-2px); }
+.hero-loop-icon {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--brand); color: #fff;
+}
+.hero-loop-icon svg { margin-left: 2px; }
