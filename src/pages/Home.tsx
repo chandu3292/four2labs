@@ -3,8 +3,8 @@ import { usePageMeta } from '../lib/usePageMeta'
 
 export default function Home() {
   usePageMeta({
-    title: 'four2labs - AI Automation, Web Development & Tech Consulting | India & US',
-    description: 'four2labs builds websites, mobile apps, AI assistants and automations for everyday businesses across India and the United States. Free 30-min consultation.',
+    title: 'four2labs - AI Automation, Web Development & Tech Consulting | Worldwide',
+    description: 'four2labs builds websites, mobile apps, AI assistants and automations for everyday businesses around the world. Free 30-min consultation.',
     canonical: 'https://four2labs.com/',
   })
   return (

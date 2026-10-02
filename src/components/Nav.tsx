@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
+
+  // Close the mobile menu as soon as the page scrolls
+  useEffect(() => {
+    if (!open) return
+    window.addEventListener('scroll', close, { passive: true })
+    return () => window.removeEventListener('scroll', close)
+  }, [open])
 
   return (
     <header className="nav">

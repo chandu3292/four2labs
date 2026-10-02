@@ -4,7 +4,7 @@ import { usePageMeta } from '../lib/usePageMeta'
 export default function About() {
   usePageMeta({
     title: 'About four2labs - Tech Partners for Everyday Businesses',
-    description: 'four2labs is a friendly tech consultancy helping shops, clinics, restaurants and service providers in India and the US grow with smart, simple technology.',
+    description: 'four2labs is a friendly tech consultancy helping shops, clinics, restaurants and service providers around the world grow with smart, simple technology.',
     canonical: 'https://four2labs.com/about',
   })
   return (
@@ -31,7 +31,7 @@ export default function About() {
               <div className="hc-row"><div className="hc-icon">🎯</div><div><div className="hc-title">Mission</div><div className="hc-sub">Help everyday businesses grow with smart tech</div></div></div>
               <div className="hc-row"><div className="hc-icon">👀</div><div><div className="hc-title">Vision</div><div className="hc-sub">A world where every business has a great tech partner</div></div></div>
               <div className="hc-row"><div className="hc-icon">🤝</div><div><div className="hc-title">Promise</div><div className="hc-sub">Honest advice, clear pricing, no jargon</div></div></div>
-              <div className="hc-row"><div className="hc-icon">🌍</div><div><div className="hc-title">Working with</div><div className="hc-sub">Businesses All over the World</div></div></div>
+              <div className="hc-row"><div className="hc-icon">🌍</div><div><div className="hc-title">Working with</div><div className="hc-sub">Businesses all over the world</div></div></div>
             </div>
           </div>
         </div>

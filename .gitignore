@@ -22,3 +22,8 @@ Thumbs.db
 *.sw?
 
 .vercel
+
+# tsc -b build output
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts

@@ -121,7 +121,7 @@ export default function Contact() {
             </div>
             <div className="info-card">
               <div className="ic-icon">🌍</div>
-              <div><h4>Where we work</h4><p>Remote-first, serving businesses across the World.</p></div>
+              <div><h4>Where we work</h4><p>Remote-first, serving businesses all over the world.</p></div>
             </div>
             <div className="info-card" style={{ background: 'linear-gradient(135deg, rgba(123,92,255,0.18), rgba(91,140,255,0.12))', borderColor: 'rgba(123,92,255,0.35)' }}>
               <div className="ic-icon">★</div>
