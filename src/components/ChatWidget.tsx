@@ -86,6 +86,9 @@ const STEPS: Record<string, Step> = {
 
 type Message = { from: 'bot' | 'user'; text: ReactNode }
 
+// Lets other parts of the page (the phone action bar) open or close the chat
+export const TOGGLE_CHAT_EVENT = 'four2labs:toggle-chat'
+
 export default function ChatWidget() {
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([{ from: 'bot', text: STEPS.start.text }])
@@ -102,6 +105,12 @@ export default function ChatWidget() {
     if (!open) track('chat_open')
     setOpen((o) => !o)
   }
+
+  useEffect(() => {
+    const onToggle = () => setOpen((o) => { if (!o) track('chat_open'); return !o })
+    window.addEventListener(TOGGLE_CHAT_EVENT, onToggle)
+    return () => window.removeEventListener(TOGGLE_CHAT_EVENT, onToggle)
+  }, [])
 
   const goTo = (to: string) => {
     const [path, hash] = to.split('#')

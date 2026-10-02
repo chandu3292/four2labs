@@ -47,7 +47,7 @@ export default function Home() {
             <h2>Everything tech, under one roof</h2>
             <p>We mix and match these building blocks to fit your business. Need something different? Just ask - if it's tech, we build it.</p>
           </div>
-          <div className="cards">
+          <div className="cards services-grid">
             <div className="card reveal">
               <div className="icon"><Globe size={24} /></div>
               <h3>Websites &amp; Apps</h3>
@@ -103,7 +103,7 @@ export default function Home() {
             <Link to="/about" className="btn btn-ghost">More about us →</Link>
           </div>
           <div className="reveal">
-            <div className="hero-card">
+            <div className="hero-card why-card">
               <div className="hc-row">
                 <div className="hc-icon"><Zap size={18} /></div>
                 <div><div className="hc-title">Fast delivery</div><div className="hc-sub">Live in weeks, not months</div></div>

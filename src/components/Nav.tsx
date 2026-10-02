@@ -7,11 +7,15 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
 
-  // Close the mobile menu as soon as the page scrolls
+  // The phone menu is a full-screen sheet: lock the page behind it while open
   useEffect(() => {
     if (!open) return
-    window.addEventListener('scroll', close, { passive: true })
-    return () => window.removeEventListener('scroll', close)
+    document.body.style.overflow = 'hidden'
+    document.body.classList.add('menu-open')
+    return () => {
+      document.body.style.overflow = ''
+      document.body.classList.remove('menu-open')
+    }
   }, [open])
 
   return (
@@ -27,6 +31,8 @@ export default function Nav() {
           <NavLink to="/services" onClick={close}>Services</NavLink>
           <NavLink to="/about" onClick={close}>About</NavLink>
           <NavLink to="/contact" onClick={close}>Contact</NavLink>
+          <Link to="/book" className="btn btn-primary nav-sheet-cta" onClick={close}>Book a free 30-min call →</Link>
+          <p className="nav-sheet-note">four2labs@gmail.com · Replies within one working day</p>
         </nav>
 
         <div className="nav-actions">

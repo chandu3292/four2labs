@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CalendarDays, Check, FileText } from 'lucide-react'
 import { BOOKING_PATH } from '../lib/contact'
@@ -71,6 +72,21 @@ const products = [
 ]
 
 export default function RecentWork() {
+  // On phones the cards become a swipe carousel; the dots follow the visible card
+  const trackRef = useRef<HTMLDivElement>(null)
+  const [active, setActive] = useState(0)
+  const onScroll = () => {
+    const el = trackRef.current
+    if (!el || !el.firstElementChild) return
+    const step = (el.firstElementChild as HTMLElement).offsetWidth + 16
+    setActive(Math.min(products.length - 1, Math.round(el.scrollLeft / step)))
+  }
+  const goTo = (i: number) => {
+    const el = trackRef.current
+    const card = el?.children[i] as HTMLElement | undefined
+    if (el && card) el.scrollTo({ left: card.offsetLeft - el.offsetLeft, behavior: 'smooth' })
+  }
+
   return (
     <section>
       <div className="container">
@@ -79,7 +95,7 @@ export default function RecentWork() {
           <h2>Ready-made AI products for your business</h2>
           <p>Products we've built and run ourselves - set up and tailored to how your business works.</p>
         </div>
-        <div className="products">
+        <div className="products" ref={trackRef} onScroll={onScroll}>
           {products.map(({ tag, title, pitch, points, Preview }) => (
             <div className="product reveal" key={title}>
               <Preview />
@@ -93,6 +109,11 @@ export default function RecentWork() {
                 <Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} className="product-link">Book a demo →</Link>
               </div>
             </div>
+          ))}
+        </div>
+        <div className="carousel-dots" role="tablist" aria-label="Choose a product">
+          {products.map((p, i) => (
+            <button key={p.title} type="button" role="tab" aria-selected={active === i} aria-label={p.title} className={active === i ? 'active' : ''} onClick={() => goTo(i)} />
           ))}
         </div>
       </div>

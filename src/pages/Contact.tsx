@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CalendarCheck, Clock, Earth, Mail, Phone } from 'lucide-react'
+import { CalendarCheck, ChevronDown, Clock, Earth, Mail, Phone } from 'lucide-react'
 import { useState, FormEvent } from 'react'
 import { track } from '@vercel/analytics'
 import { usePageMeta } from '../lib/usePageMeta'
@@ -156,16 +156,37 @@ export default function Contact() {
             <h2>Before you get in touch</h2>
             <p>Quick answers to things people usually ask before that first conversation.</p>
           </div>
-          <div className="cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
-            <div className="card reveal"><h3>Do I need to know tech?</h3><p>Not at all. Most of our clients aren't technical - that's exactly why they work with us. We translate your goals into a plan in plain language.</p></div>
-            <div className="card reveal"><h3>Is the first call free?</h3><p>Yes. The first 30 minutes are always free and there's no obligation to work with us afterward. You'll leave with something useful either way.</p></div>
-            <div className="card reveal"><h3>Do you only build big projects?</h3><p>Not at all. We're just as happy building a small, simple one-page website as we are creating a full AI-powered app. Tell us your goal and we'll shape the project to fit it.</p></div>
-            <div className="card reveal"><h3>What if I just have an idea?</h3><p>That's the perfect time to talk. We'll help you figure out whether and how it could work - even before any building starts.</p></div>
-            <div className="card reveal"><h3>Do you work outside this service list?</h3><p>Yes. The services on our site are our base. If you need something custom, we very likely build that too - just ask.</p></div>
-            <div className="card reveal"><h3>How fast do you reply?</h3><p>Within one working day, almost always sooner. If it's urgent, mention that in your message.</p></div>
-          </div>
+          <Faq />
         </div>
       </section>
     </>
+  )
+}
+
+// On phones each answer opens on tap; on desktop they all show as cards
+const FAQ: [string, string][] = [
+  ['Do I need to know tech?', "Not at all. Most of our clients aren't technical - that's exactly why they work with us. We translate your goals into a plan in plain language."],
+  ['Is the first call free?', "Yes. The first 30 minutes are always free and there's no obligation to work with us afterward. You'll leave with something useful either way."],
+  ['Do you only build big projects?', "Not at all. We're just as happy building a small, simple one-page website as we are creating a full AI-powered app. Tell us your goal and we'll shape the project to fit it."],
+  ['What if I just have an idea?', "That's the perfect time to talk. We'll help you figure out whether and how it could work - even before any building starts."],
+  ['Do you work outside this service list?', 'Yes. The services on our site are our base. If you need something custom, we very likely build that too - just ask.'],
+  ['How fast do you reply?', "Within one working day, almost always sooner. If it's urgent, mention that in your message."]
+]
+
+function Faq() {
+  const [open, setOpen] = useState<number | null>(null)
+  return (
+    <div className="cards faq" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+      {FAQ.map(([q, a], i) => (
+        <div className={`card reveal ${open === i ? 'open' : ''}`} key={q}>
+          <h3>
+            <button type="button" className="faq-q" aria-expanded={open === i} onClick={() => setOpen(open === i ? null : i)}>
+              {q}<ChevronDown size={18} className="faq-chevron" />
+            </button>
+          </h3>
+          <p>{a}</p>
+        </div>
+      ))}
+    </div>
   )
 }

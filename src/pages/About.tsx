@@ -29,7 +29,7 @@ export default function About() {
             <p>Today we work with businesses all over the world, building websites, apps, AI tools and automations that quietly make a big difference.</p>
           </div>
           <div className="reveal">
-            <div className="hero-card">
+            <div className="hero-card why-card">
               <div className="hc-row"><div className="hc-icon"><Target size={18} /></div><div><div className="hc-title">Mission</div><div className="hc-sub">Help everyday businesses grow with smart tech</div></div></div>
               <div className="hc-row"><div className="hc-icon"><Eye size={18} /></div><div><div className="hc-title">Vision</div><div className="hc-sub">A world where every business has a great tech partner</div></div></div>
               <div className="hc-row"><div className="hc-icon"><Handshake size={18} /></div><div><div className="hc-title">Promise</div><div className="hc-sub">Honest advice, clear pricing, no jargon</div></div></div>
@@ -48,7 +48,7 @@ export default function About() {
             <h2>Our values, in plain words</h2>
             <p>These aren't posters on a wall - they shape every project, conversation and decision we make.</p>
           </div>
-          <div className="values">
+          <div className="values swipe">
             <div className="value reveal"><div className="v-icon">01</div><h3>Business first, tech second</h3><p>The goal isn't cool tech - it's a healthier business. Every line of code starts with that question.</p></div>
             <div className="value reveal"><div className="v-icon">02</div><h3>Speak human</h3><p>If you're not clear on what we built or why we built it, we haven't done our job. No buzzwords. Ever.</p></div>
             <div className="value reveal"><div className="v-icon">03</div><h3>Honest over impressive</h3><p>We'll tell you when something isn't worth building, even if it means a smaller project for us.</p></div>
@@ -66,7 +66,7 @@ export default function About() {
             <h2>We're not your usual tech agency</h2>
             <p>Here's how working with us tends to feel different from the alternatives.</p>
           </div>
-          <div className="cards">
+          <div className="cards swipe">
             <div className="card reveal"><div className="icon"><MessageCircle size={24} /></div><h3>Conversations, not pitches</h3><p>Our first call isn't a sales meeting. It's just us understanding your business, your customers, and what's slowing you down.</p></div>
             <div className="card reveal"><div className="icon"><Compass size={24} /></div><h3>One team, end to end</h3><p>Strategy, design, code, AI, support - all from the same team that knows your business inside out.</p></div>
             <div className="card reveal"><div className="icon"><TrendingUp size={24} /></div><h3>Outcomes, not deliverables</h3><p>We measure ourselves by what changes we bring to your business - more bookings, less chaos, happier customers.</p></div>
