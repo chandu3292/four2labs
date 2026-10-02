@@ -1,4 +1,4 @@
-import { freeSlots } from './_calendar'
+import { freeSlots } from './_calendar.js'
 
 export async function GET() {
   try {

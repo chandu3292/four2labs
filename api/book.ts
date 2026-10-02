@@ -1,5 +1,5 @@
 import { waitUntil } from '@vercel/functions'
-import { candidateSlots, createBooking } from './_calendar'
+import { candidateSlots, createBooking } from './_calendar.js'
 
 type Body = { name?: string; email?: string; phone?: string; topic?: string; notes?: string; start?: string; _honey?: string }
 
