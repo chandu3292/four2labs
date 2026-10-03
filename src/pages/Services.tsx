@@ -7,9 +7,11 @@ import {
   Smartphone, Truck, Users, Workflow, Wrench, type LucideIcon,
 } from 'lucide-react'
 import { usePageMeta } from '../lib/usePageMeta'
+import ServicePreview from '../components/ServicePreview'
 
 type Service = { Icon: LucideIcon; title: string; text: string }
-type Group = { id: string; label: string; title: string; intro: string; services: Service[] }
+type GroupId = 'websites' | 'apps' | 'operations' | 'ai' | 'automation' | 'care'
+type Group = { id: GroupId; label: string; title: string; intro: string; services: Service[] }
 
 const GROUPS: Group[] = [
   {
@@ -125,19 +127,23 @@ export default function Services() {
       </section>
 
       {GROUPS.map((g, i) => (
-        <section id={g.id} key={g.id} className="service-group" style={i % 2 === 1 ? { background: 'var(--bg-2)' } : undefined}>
-          <div className="container">
-            <div className="section-head reveal">
+        <section id={g.id} key={g.id} className={`service-group ${i % 2 === 1 ? 'flip' : ''}`} style={i % 2 === 1 ? { background: 'var(--bg-2)' } : undefined}>
+          <div className="container svc-split">
+            <div className="svc-intro reveal">
               <span className="eyebrow">{String(i + 1).padStart(2, '0')} - {g.label}</span>
               <h2>{g.title}</h2>
               <p>{g.intro}</p>
+              <ServicePreview id={g.id} />
+              <Link to="/contact" className="svc-link">Talk to us about {g.label === 'AI' ? 'AI' : g.label.toLowerCase()} →</Link>
             </div>
-            <div className="cards swipe service-cards" style={{ gridTemplateColumns: `repeat(${g.services.length === 4 ? 4 : 3}, minmax(0, 1fr))` }}>
+            <div className="svc-list">
               {g.services.map(({ Icon, title, text }) => (
-                <div className="card reveal" key={title}>
-                  <div className="icon"><Icon size={24} /></div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
+                <div className="svc-item reveal" key={title}>
+                  <div className="svc-icon"><Icon size={20} /></div>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
                 </div>
               ))}
             </div>
