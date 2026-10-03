@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Bot, ChartColumn, Cog, Compass, Globe, LifeBuoy, MessageCircle, Zap } from 'lucide-react'
+import { Compass, LifeBuoy, MessageCircle, Zap } from 'lucide-react'
 import { track } from '@vercel/analytics'
 import { usePageMeta } from '../lib/usePageMeta'
 import { BOOKING_PATH } from '../lib/contact'
@@ -8,6 +8,7 @@ import RecentWork from '../components/RecentWork'
 import Founder from '../components/Founder'
 import DemoVideo from '../components/DemoVideo'
 import HeroLoop from '../components/HeroLoop'
+import Capabilities from '../components/Capabilities'
 
 export default function Home() {
   usePageMeta({
@@ -45,30 +46,9 @@ export default function Home() {
           <div className="section-head reveal">
             <span className="eyebrow">What we do</span>
             <h2>Everything tech, under one roof</h2>
-            <p>We mix and match these building blocks to fit your business. Need something different? Just ask - if it's tech, we build it.</p>
+            <p>From your first website to AI that runs parts of your business - here's what we build. Need something that isn't listed? If it's tech, we build it.</p>
           </div>
-          <div className="cards services-grid">
-            <div className="card reveal">
-              <div className="icon"><Globe size={24} /></div>
-              <h3>Websites &amp; Apps</h3>
-              <p>A strong online presence - beautiful websites, mobile apps, and the systems behind them that quietly do the heavy lifting.</p>
-            </div>
-            <div className="card reveal">
-              <div className="icon"><Bot size={24} /></div>
-              <h3>AI for your business</h3>
-              <p>AI assistants that answer calls, book appointments, run your marketing and handle the boring stuff - so you don't have to.</p>
-            </div>
-            <div className="card reveal">
-              <div className="icon"><ChartColumn size={24} /></div>
-              <h3>CRM Dashboards &amp; Insights</h3>
-              <p>See your sales, customers and operations clearly. Turn raw numbers into simple decisions you can act on today.</p>
-            </div>
-            <div className="card reveal">
-              <div className="icon"><Cog size={24} /></div>
-              <h3>Automation &amp; Care</h3>
-              <p>Automate the repetitive work, then we look after everything monthly so it keeps running smoothly in the background.</p>
-            </div>
-          </div>
+          <Capabilities />
           <div className="text-center mt-24">
             <Link to="/services" className="btn btn-ghost">Explore all services →</Link>
           </div>

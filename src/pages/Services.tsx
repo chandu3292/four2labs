@@ -1,82 +1,149 @@
-import { Link } from 'react-router-dom'
-import { ChartColumn, ChartLine, Headset, Layers, Lightbulb, MapPin, Megaphone, Monitor, ReceiptText, Smartphone, Wrench, Zap } from 'lucide-react'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import {
+  AppWindow, BookOpen, CalendarCheck, ChartColumn, ChartLine, Compass, CreditCard, FileBarChart,
+  Gauge, Globe, GraduationCap, Headset, LayoutTemplate, Lightbulb, Mail, Megaphone, MessagesSquare,
+  Package, PanelsTopLeft, Plug, ReceiptText, ScanText, Search, ShieldCheck, ShoppingCart,
+  Smartphone, Truck, Users, Workflow, Wrench, type LucideIcon,
+} from 'lucide-react'
 import { usePageMeta } from '../lib/usePageMeta'
+
+type Service = { Icon: LucideIcon; title: string; text: string }
+type Group = { id: string; label: string; title: string; intro: string; services: Service[] }
+
+const GROUPS: Group[] = [
+  {
+    id: 'websites',
+    label: 'Websites',
+    title: 'Websites & online presence',
+    intro: 'How customers find you, learn about you and buy from you.',
+    services: [
+      { Icon: Globe, title: 'Business websites', text: 'A fast, modern website that tells your story and turns visitors into enquiries.' },
+      { Icon: LayoutTemplate, title: 'Landing pages', text: 'Focused pages for a product, offer or campaign - built to convert, not just look nice.' },
+      { Icon: ShoppingCart, title: 'Online stores & ordering', text: 'Sell products or take food and service orders online, with payments built in.' },
+      { Icon: Gauge, title: 'Redesigns & speed-ups', text: 'Give an outdated or slow website a modern look and make it load fast on every phone.' },
+      { Icon: Search, title: 'Google visibility', text: 'Search-friendly pages, Google Business setup and the basics that help customers find you.' },
+    ],
+  },
+  {
+    id: 'apps',
+    label: 'Apps & software',
+    title: 'Apps & custom software',
+    intro: 'Software built around the way your business already works.',
+    services: [
+      { Icon: Smartphone, title: 'Mobile apps', text: 'Apps for iPhone and Android - bookings, orders, loyalty, or anything your customers need.' },
+      { Icon: AppWindow, title: 'Web apps & customer portals', text: 'Online portals where customers log in to order, track, pay or download what they need.' },
+      { Icon: CalendarCheck, title: 'Booking & appointment systems', text: 'Let customers pick a time online, with reminders and calendar sync - no back-and-forth.' },
+      { Icon: PanelsTopLeft, title: 'Internal tools & admin panels', text: 'Simple screens for your team to manage records, approvals and daily tasks in one place.' },
+      { Icon: Plug, title: 'Integrations', text: 'Connect your website, payments, calendar, email and other tools so data flows on its own.' },
+    ],
+  },
+  {
+    id: 'operations',
+    label: 'Operations',
+    title: 'Operations & data',
+    intro: 'Remove the chaos from orders, stock, customers and reporting.',
+    services: [
+      { Icon: ReceiptText, title: 'Order management', text: 'Every order in one organised place - no scattered messages, missed orders or messy spreadsheets.' },
+      { Icon: Package, title: 'Inventory management', text: 'Know what is in stock, what is running low and what to reorder - automatically.' },
+      { Icon: Truck, title: 'Delivery & job tracking', text: 'Real-time status so you and your customers always know where a delivery or job stands.' },
+      { Icon: Users, title: 'CRM & customer management', text: 'Every customer, enquiry and follow-up in one place, so nothing slips through the cracks.' },
+      { Icon: ChartColumn, title: 'Dashboards & reports', text: 'Sales, customers and operations at a glance - updated automatically, no spreadsheets.' },
+      { Icon: ChartLine, title: 'Data analysis', text: 'We dig into your numbers and turn them into plain-English insights you can act on.' },
+    ],
+  },
+  {
+    id: 'ai',
+    label: 'AI',
+    title: 'AI for your business',
+    intro: 'Smart assistants that work around the clock, so your team can focus on what matters.',
+    services: [
+      { Icon: Headset, title: 'AI receptionist & voice agents', text: 'Answers calls 24/7, books appointments and captures every lead - even after hours.' },
+      { Icon: MessagesSquare, title: 'AI chatbots for website & WhatsApp', text: 'Instant, accurate answers to customer questions on your website and in chats.' },
+      { Icon: BookOpen, title: 'Business knowledge assistant', text: 'Ask questions about your own price lists, policies and documents - and get answers with sources.' },
+      { Icon: ScanText, title: 'Document & invoice reading', text: 'Pull the details out of invoices, forms and scanned paper automatically - no manual typing.' },
+      { Icon: Megaphone, title: 'AI marketing assistant', text: 'Drafts posts, follow-ups and replies to leads, so your marketing keeps moving every week.' },
+    ],
+  },
+  {
+    id: 'automation',
+    label: 'Automation',
+    title: 'Automation & integrations',
+    intro: 'Hand the repetitive work to software and get hours back every week.',
+    services: [
+      { Icon: Workflow, title: 'Workflow automation', text: 'Connect your tools so routine steps - copying data, updating records, notifying people - happen on their own.' },
+      { Icon: Mail, title: 'WhatsApp & email automation', text: 'Automatic confirmations, reminders and follow-ups that go out at the right time.' },
+      { Icon: CreditCard, title: 'Billing & payment automation', text: 'Invoices created, sent and chased automatically, with payments recorded for you.' },
+      { Icon: FileBarChart, title: 'Automatic reports', text: 'The reports you build by hand every week, generated and emailed on schedule.' },
+    ],
+  },
+  {
+    id: 'care',
+    label: 'Support',
+    title: 'Support & growth',
+    intro: "We don't disappear after launch - we keep everything running and improving.",
+    services: [
+      { Icon: Wrench, title: 'Maintenance & updates', text: 'Regular check-ups, fixes and small improvements so your tech stays fast and reliable.' },
+      { Icon: ShieldCheck, title: 'Hosting & security', text: 'Secure hosting, backups and monitoring handled for you, so you never have to think about it.' },
+      { Icon: GraduationCap, title: 'Training & handover', text: 'Simple training and guides so your team is confident using everything we build.' },
+      { Icon: Compass, title: 'Tech consulting', text: 'Not sure what to build, buy or fix first? We give you an honest, plain-language plan.' },
+      { Icon: Lightbulb, title: 'Custom solutions', text: "Need something that isn't listed? We build custom tools, integrations and platforms for specific needs." },
+    ],
+  },
+]
 
 export default function Services() {
   usePageMeta({
-    title: 'Services - AI Automation, Websites, Mobile Apps & Dashboards | four2labs',
-    description: 'AI receptionist, AI marketing agents, AI workflows, custom mobile apps, websites, dashboards, data analysis and ongoing tech support - everything tech for growing businesses.',
+    title: 'Services - Websites, Apps, AI, Automation & Support | four2labs',
+    description: 'Websites, online stores, mobile apps, booking systems, CRMs, dashboards, AI receptionists, chatbots, document automation, workflow automation, hosting and ongoing support for growing businesses.',
     canonical: 'https://four2labs.com/services',
   })
+
+  // Footer links like /services#ai land here; jump to the right group once it has rendered
+  const { hash } = useLocation()
+  useEffect(() => {
+    if (!hash) return
+    const t = setTimeout(() => document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' }), 150)
+    return () => clearTimeout(t)
+  }, [hash])
+
+  const jump = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+
   return (
     <>
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">Our services</span>
           <h1>Tech that <span className="gradient-text">actually helps</span></h1>
-          <p>These are our core building blocks. We mix and match them to fit your business - and if you need something not on this list, just ask. If it's tech, we'll build it.</p>
+          <p>Everything from your first website to AI that runs parts of your business. We mix and match these to fit you - and if you need something not listed, just ask. If it's tech, we build it.</p>
+          <nav className="service-jump" aria-label="Jump to a service group">
+            {GROUPS.map((g) => (
+              <button type="button" key={g.id} className="chip" onClick={() => jump(g.id)}>{g.label}</button>
+            ))}
+          </nav>
         </div>
       </section>
 
-      <section id="websites">
-        <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">01 - Online presence</span>
-            <h2>Websites &amp; Apps</h2>
-            <p>How your customers find you, learn about you and do business with you.</p>
+      {GROUPS.map((g, i) => (
+        <section id={g.id} key={g.id} className="service-group" style={i % 2 === 1 ? { background: 'var(--bg-2)' } : undefined}>
+          <div className="container">
+            <div className="section-head reveal">
+              <span className="eyebrow">{String(i + 1).padStart(2, '0')} - {g.label}</span>
+              <h2>{g.title}</h2>
+              <p>{g.intro}</p>
+            </div>
+            <div className="cards swipe service-cards" style={{ gridTemplateColumns: `repeat(${g.services.length === 4 ? 4 : 3}, minmax(0, 1fr))` }}>
+              {g.services.map(({ Icon, title, text }) => (
+                <div className="card reveal" key={title}>
+                  <div className="icon"><Icon size={24} /></div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="cards swipe">
-            <div className="card reveal"><span className="tag">Mobile</span><div className="icon"><Smartphone size={24} /></div><h3>Mobile Apps</h3><p>Custom apps for iPhone and Android that put your business in your customers' pocket - bookings, orders, loyalty, anything you need.</p></div>
-            <div className="card reveal"><span className="tag">Full build</span><div className="icon"><Layers size={24} /></div><h3>Website + Backend</h3><p>A complete website with the smart system behind it that handles your data, users, orders and everything else, automatically.</p></div>
-            <div className="card reveal"><span className="tag">Quick start</span><div className="icon"><Monitor size={24} /></div><h3>Website Only</h3><p>A clean, modern website that looks great and tells your story - perfect when you just need a strong first impression online.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="operations" style={{ background: 'var(--bg-2)' }}>
-        <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">02 - Day-to-day operations</span>
-            <h2>Run your business smoother</h2>
-            <p>Modules that quietly remove the chaos from how you take orders, track work and report on it.</p>
-          </div>
-          <div className="cards swipe">
-            <div className="card reveal"><span className="tag">Orders</span><div className="icon"><ReceiptText size={24} /></div><h3>Orders Module</h3><p>Take and manage customer orders in one organised place - no more scattered messages, missed orders, or messy spreadsheets.</p></div>
-            <div className="card reveal"><span className="tag">Tracking</span><div className="icon"><MapPin size={24} /></div><h3>Tracking Module</h3><p>Real-time tracking so you and your customers always know exactly where deliveries, shipments or jobs stand.</p></div>
-            <div className="card reveal"><span className="tag">Visibility</span><div className="icon"><ChartColumn size={24} /></div><h3>CRM Dashboards</h3><p>Clear, simple dashboards that show your sales, customers and operations at a glance - no spreadsheets needed.</p></div>
-            <div className="card reveal"><span className="tag">Insight</span><div className="icon"><ChartLine size={24} /></div><h3>Data Analysis</h3><p>We dig into your numbers and turn them into plain-English insights you can use to make smarter business decisions.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="ai">
-        <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">03 - AI for your business</span>
-            <h2>Let AI handle the busywork</h2>
-            <p>Smart assistants that work around the clock so you can focus on the things only you can do.</p>
-          </div>
-          <div className="cards swipe">
-            <div className="card reveal"><span className="tag">24/7</span><div className="icon"><Headset size={24} /></div><h3>AI Receptionist &amp; Booking</h3><p>An AI that answers your calls, books appointments and answers customer questions - day, night, weekends, holidays. You never miss a customer.</p></div>
-            <div className="card reveal"><span className="tag">Marketing</span><div className="icon"><Megaphone size={24} /></div><h3>AI Marketing Agent</h3><p>AI that handles your marketing - writing posts, sending follow-ups, replying to leads - so your brand is always working, even when you aren't.</p></div>
-            <div className="card reveal"><span className="tag">Automation</span><div className="icon"><Zap size={24} /></div><h3>AI Workflows</h3><p>Connect your tools and let AI do the repetitive work - invoices, emails, data entry, reminders. Hours back in your week.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="care" style={{ background: 'var(--bg-2)' }}>
-        <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">04 - Ongoing support</span>
-            <h2>We don't disappear after launch</h2>
-            <p>Tech needs care. We stay with you so everything keeps running smoothly - and keeps getting better.</p>
-          </div>
-          <div className="cards swipe" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-            <div className="card reveal"><span className="tag">Monthly</span><div className="icon"><Wrench size={24} /></div><h3>Maintenance &amp; Updates</h3><p>Regular check-ups, security updates, fixes and small improvements - so your tech stays fast, safe and reliable, every single month.</p></div>
-            <div className="card reveal"><span className="tag">On request</span><div className="icon"><Lightbulb size={24} /></div><h3>Custom Tech Solutions</h3><p>Need something that isn't on this list? Tell us about it. We've built custom tools, integrations and platforms for clients with very specific needs.</p></div>
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <section>
         <div className="container two-col">
