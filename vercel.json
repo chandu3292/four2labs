@@ -2,12 +2,6 @@
   "regions": [
     "bom1"
   ],
-  "rewrites": [
-    {
-      "source": "/((?!api/|@|src/|node_modules/)[^.]*)",
-      "destination": "/"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

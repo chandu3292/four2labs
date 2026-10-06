@@ -23,11 +23,13 @@ function withMeta(html, meta) {
 }
 
 // Route -> output file (cleanUrls in vercel.json serves /services from services.html)
-const pages = { '/': 'index.html', '/services': 'services.html', '/about': 'about.html', '/contact': 'contact.html', '/book': 'book.html', '/privacy': 'privacy.html' }
+const pages = { '/': 'index.html', '/services': 'services.html', '/about': 'about.html', '/contact': 'contact.html', '/book': 'book.html', '/privacy': 'privacy.html', '/404': '404.html' }
 
 for (const [route, file] of Object.entries(pages)) {
   const body = await render(route)
-  const html = withMeta(template, PAGE_META[route]).replace('<div id="root"></div>', `<div id="root">${body}</div>`)
+  let html = withMeta(template, PAGE_META[route]).replace('<div id="root"></div>', `<div id="root">${body}</div>`)
+  // Keep the not-found page out of search results
+  if (route === '/404') html = html.replace('<meta name="robots" content="index, follow" />', '<meta name="robots" content="noindex" />')
   if (!/<h1[\s>]/.test(body)) throw new Error(`Prerender of ${route} has no <h1>`)
   writeFileSync(resolve(dist, file), html)
   console.log(`prerendered ${route} -> ${file} (${Math.round(html.length / 1024)} KB)`)
