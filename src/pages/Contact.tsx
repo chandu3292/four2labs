@@ -3,15 +3,12 @@ import { CalendarCheck, ChevronDown, Clock, Earth, Mail, Phone } from 'lucide-re
 import { useState, FormEvent } from 'react'
 import { track } from '@vercel/analytics'
 import { usePageMeta } from '../lib/usePageMeta'
+import { PAGE_META } from '../lib/meta'
 import { BOOKING_PATH, whatsappLink } from '../lib/contact'
 import { prefetchSlots } from '../lib/slots'
 
 export default function Contact() {
-  usePageMeta({
-    title: 'Contact - Free 30-min Tech Consultation | four2labs',
-    description: 'Tell us about your business. Free 30-minute consultation, no sales pressure. We reply within one working day. Email hello@four2labs.com or call +91 93906 94802.',
-    canonical: 'https://four2labs.com/contact',
-  })
+  usePageMeta(PAGE_META['/contact'])
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)

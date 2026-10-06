@@ -10,14 +10,19 @@ function getInitial(): Theme {
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(getInitial)
+  // Start as 'light' so the first render matches the prerendered HTML; the saved
+  // theme is already applied to <html> by the inline script in index.html
+  const [theme, setTheme] = useState<Theme | null>(null)
+
+  useEffect(() => { setTheme(getInitial()) }, [])
 
   useEffect(() => {
+    if (!theme) return
     document.documentElement.dataset.theme = theme
     localStorage.setItem('four2labs-theme', theme)
   }, [theme])
 
-  const toggle = () => setTheme((t) => (t === 'light' ? 'dark' : 'light'))
+  const toggle = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
   const isDark = theme === 'dark'
 
   return (

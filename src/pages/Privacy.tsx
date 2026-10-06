@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom'
 import { usePageMeta } from '../lib/usePageMeta'
+import { PAGE_META } from '../lib/meta'
 
 const EMAIL = 'hello@four2labs.com'
 
 export default function Privacy() {
-  usePageMeta({
-    title: 'Privacy Policy | four2labs',
-    description: 'How four2labs collects, uses and protects the information you share through our website, contact form, booking page and chat.',
-    canonical: 'https://four2labs.com/privacy',
-  })
+  usePageMeta(PAGE_META['/privacy'])
   return (
     <>
       <section className="page-header">

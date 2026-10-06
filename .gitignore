@@ -27,3 +27,6 @@ Thumbs.db
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts
+
+# temporary server build used for prerendering
+dist-server

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useMemo, useState, FormEvent } from 'react'
 import { track } from '@vercel/analytics'
 import { usePageMeta } from '../lib/usePageMeta'
+import { PAGE_META } from '../lib/meta'
 import { whatsappLink } from '../lib/contact'
 import { loadSlots } from '../lib/slots'
 
@@ -14,11 +15,7 @@ const fmtTime = (iso: string) => new Date(iso).toLocaleTimeString(undefined, { h
 const fmtFull = (iso: string) => new Date(iso).toLocaleString(undefined, { weekday: 'long', day: 'numeric', month: 'long', hour: 'numeric', minute: '2-digit' })
 
 export default function Book() {
-  usePageMeta({
-    title: 'Book a free 30-min call | four2labs',
-    description: 'Pick a time for a free, no-pressure 30-minute call with four2labs. Tell us about your business and we will help you figure out what is worth building.',
-    canonical: 'https://four2labs.com/book',
-  })
+  usePageMeta(PAGE_META['/book'])
 
   const [status, setStatus] = useState<Status>('loading')
   const [slots, setSlots] = useState<string[]>([])

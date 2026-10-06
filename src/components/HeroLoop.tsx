@@ -13,7 +13,7 @@ export default function HeroLoop() {
 
   const playDemo = () => {
     track('hero_demo_click')
-    window.dispatchEvent(new Event(PLAY_DEMO_EVENT))
+    window.dispatchEvent(new CustomEvent(PLAY_DEMO_EVENT, { detail: 'demo' }))
   }
 
   return (

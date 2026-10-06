@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom'
 import { usePageMeta } from '../lib/usePageMeta'
+import { PAGE_META } from '../lib/meta'
 
 export default function NotFound() {
-  usePageMeta({
-    title: 'Page not found | four2labs',
-    description: "The page you're looking for doesn't exist. Head back to the four2labs home page or get in touch.",
-    canonical: 'https://four2labs.com/',
-  })
+  usePageMeta(PAGE_META['/404'])
   return (
     <section className="page-header">
       <div className="container">

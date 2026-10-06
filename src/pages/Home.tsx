@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Compass, LifeBuoy, MessageCircle, Zap } from 'lucide-react'
 import { track } from '@vercel/analytics'
 import { usePageMeta } from '../lib/usePageMeta'
+import { PAGE_META } from '../lib/meta'
 import { BOOKING_PATH } from '../lib/contact'
 import { prefetchSlots } from '../lib/slots'
 import RecentWork from '../components/RecentWork'
@@ -11,11 +12,7 @@ import HeroLoop from '../components/HeroLoop'
 import Capabilities from '../components/Capabilities'
 
 export default function Home() {
-  usePageMeta({
-    title: 'four2labs - AI Automation, Web Development & Tech Consulting | Worldwide',
-    description: 'four2labs builds websites, mobile apps, AI assistants and automations for everyday businesses around the world. Free 30-min consultation.',
-    canonical: 'https://four2labs.com/',
-  })
+  usePageMeta(PAGE_META['/'])
   return (
     <>
       <section className="hero">

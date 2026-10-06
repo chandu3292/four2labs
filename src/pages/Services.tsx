@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import {
-  AppWindow, BookOpen, CalendarCheck, ChartColumn, ChartLine, Compass, CreditCard, FileBarChart,
+  AppWindow, BookOpen, Play, CalendarCheck, ChartColumn, ChartLine, Compass, CreditCard, FileBarChart,
   Gauge, Globe, GraduationCap, Headset, LayoutTemplate, Lightbulb, Mail, Megaphone, MessagesSquare,
   Package, PanelsTopLeft, Plug, ReceiptText, ScanText, Search, ShieldCheck, ShoppingCart,
   Smartphone, Truck, Users, Workflow, Wrench, type LucideIcon,
 } from 'lucide-react'
 import { usePageMeta } from '../lib/usePageMeta'
+import { PAGE_META } from '../lib/meta'
 import ServicePreview from '../components/ServicePreview'
 
 type Service = { Icon: LucideIcon; title: string; text: string }
@@ -95,11 +96,7 @@ const GROUPS: Group[] = [
 ]
 
 export default function Services() {
-  usePageMeta({
-    title: 'Services - Websites, Apps, AI, Automation & Support | four2labs',
-    description: 'Websites, online stores, mobile apps, booking systems, CRMs, dashboards, AI receptionists, chatbots, document automation, workflow automation, hosting and ongoing support for growing businesses.',
-    canonical: 'https://four2labs.com/services',
-  })
+  usePageMeta(PAGE_META['/services'])
 
   // Footer links like /services#ai land here; jump to the right group once it has rendered
   const { hash } = useLocation()
@@ -134,7 +131,10 @@ export default function Services() {
               <h2>{g.title}</h2>
               <p>{g.intro}</p>
               <ServicePreview id={g.id} />
-              <Link to="/contact" className="svc-link">Talk to us about {g.label === 'AI' ? 'AI' : g.label.toLowerCase()} →</Link>
+              <div className="svc-links">
+                {g.id !== 'care' && <Link to={g.id === 'ai' ? '/?video=demo' : `/?chapter=${g.id}`} className="svc-watch"><Play size={13} fill="currentColor" /> See it in action</Link>}
+                <Link to="/contact" className="svc-link">Talk to us about {g.label === 'AI' ? 'AI' : g.label.toLowerCase()} →</Link>
+              </div>
             </div>
             <div className="svc-list">
               {g.services.map(({ Icon, title, text }) => (

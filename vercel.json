@@ -107,5 +107,7 @@
       "destination": "/?utm_source=google&utm_medium=business_profile&utm_campaign=listing",
       "permanent": false
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "buildCommand": "npm run build"
 }

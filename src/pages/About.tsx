@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Compass, Earth, Eye, Handshake, Infinity, MessageCircle, Target, TrendingUp } from 'lucide-react'
 import { usePageMeta } from '../lib/usePageMeta'
+import { PAGE_META } from '../lib/meta'
 import Founder from '../components/Founder'
 
 export default function About() {
-  usePageMeta({
-    title: 'About four2labs - Tech Partners for Everyday Businesses',
-    description: 'four2labs is a friendly tech consultancy helping shops, clinics, restaurants and service providers around the world grow with smart, simple technology.',
-    canonical: 'https://four2labs.com/about',
-  })
+  usePageMeta(PAGE_META['/about'])
   return (
     <>
       <section className="page-header">

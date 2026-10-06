@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { ArrowRight, Check, CreditCard, MessageCircle, ShoppingCart } from 'lucide-react'
 
 // Small navy illustrations for each service group, in the same style as the product previews
@@ -85,7 +86,28 @@ function Status() {
 
 const PREVIEWS = { websites: Website, apps: App, operations: Dashboard, ai: Chat, automation: Flow, care: Status } as const
 
+// Silent loops cut from the story film; groups without a clip keep their illustration
+const CLIPS = new Set(['websites', 'apps', 'ai', 'automation', 'operations'])
+
+function Clip({ id }: { id: string }) {
+  const ref = useRef<HTMLVideoElement>(null)
+  // Download and play only while on screen; respect reduced-motion settings
+  useEffect(() => {
+    const v = ref.current
+    if (!v || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { v.preload = 'auto'; v.play().catch(() => {}) }
+      else v.pause()
+    }, { threshold: 0.25 })
+    io.observe(v)
+    return () => io.disconnect()
+  }, [])
+  return (
+    <video ref={ref} className="sp-clip" src={`/video/services/${id}.mp4`} poster={`/video/services/${id}.jpg`} muted loop playsInline preload="none" />
+  )
+}
+
 export default function ServicePreview({ id }: { id: keyof typeof PREVIEWS }) {
   const Preview = PREVIEWS[id]
-  return <div className="sp-frame" aria-hidden="true"><Preview /></div>
+  return <div className="sp-frame" aria-hidden="true">{CLIPS.has(id) ? <Clip id={id} /> : <Preview />}</div>
 }
