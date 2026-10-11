@@ -166,7 +166,7 @@ export default function Voisy() {
       <section>
         <div className="container">
           <div className="cta reveal">
-            <h2>One AI voice agent. Two directions. Endless possibilities.</h2>
+            <h2>From first hello to follow-up, Voisy keeps you connected.</h2>
             <p>See how Voisy would sound on your business's calls. A free 30-minute walkthrough, no pressure.</p>
             <div className="hero-actions" style={{ justifyContent: 'center', marginBottom: 0 }}>
               <Link to={BOOKING_PATH} className="btn btn-primary" {...book}>Book a Voisy demo →</Link>
