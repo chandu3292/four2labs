@@ -2,15 +2,16 @@ import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import {
   AppWindow, BookOpen, Play, CalendarCheck, ChartColumn, ChartLine, Compass, CreditCard, FileBarChart,
-  Gauge, Globe, GraduationCap, Headset, LayoutTemplate, Lightbulb, Mail, Megaphone, MessagesSquare,
+  Gauge, Globe, GraduationCap, LayoutTemplate, Lightbulb, Mail, Megaphone, MessagesSquare,
   Package, PanelsTopLeft, Plug, ReceiptText, ScanText, Search, ShieldCheck, ShoppingCart,
   Smartphone, Truck, Users, Workflow, Wrench, type LucideIcon,
 } from 'lucide-react'
 import { usePageMeta } from '../lib/usePageMeta'
 import { PAGE_META } from '../lib/meta'
 import ServicePreview from '../components/ServicePreview'
+import VoisyIcon from '../components/VoisyIcon'
 
-type Service = { Icon: LucideIcon; title: string; text: string }
+type Service = { Icon: LucideIcon | typeof VoisyIcon; title: string; text: string }
 type GroupId = 'websites' | 'apps' | 'operations' | 'ai' | 'automation' | 'care'
 type Group = { id: GroupId; label: string; title: string; intro: string; services: Service[] }
 
@@ -61,7 +62,7 @@ const GROUPS: Group[] = [
     title: 'AI for your business',
     intro: 'Smart assistants that work around the clock, so your team can focus on what matters.',
     services: [
-      { Icon: Headset, title: 'AI receptionist & voice agents', text: 'Answers calls 24/7, books appointments and captures every lead - even after hours.' },
+      { Icon: VoisyIcon, title: 'Voisy - AI voice agent', text: 'Answers calls 24/7, books appointments, captures every lead and makes follow-up calls for you.' },
       { Icon: MessagesSquare, title: 'AI chatbots for website & WhatsApp', text: 'Instant, accurate answers to customer questions on your website and in chats.' },
       { Icon: BookOpen, title: 'Business knowledge assistant', text: 'Ask questions about your own price lists, policies and documents - and get answers with sources.' },
       { Icon: ScanText, title: 'Document & invoice reading', text: 'Pull the details out of invoices, forms and scanned paper automatically - no manual typing.' },

@@ -10,7 +10,7 @@ import { PLAY_DEMO_EVENT } from './HeroLoop'
 export const CHAPTERS = [
   { id: 'websites', label: 'Bakery', topic: 'Websites', t: 17 },
   { id: 'apps', label: 'Fitness studio', topic: 'Apps', t: 44 },
-  { id: 'ai', label: 'Dental clinic', topic: 'AI receptionist', t: 70 },
+  { id: 'ai', label: 'Dental clinic', topic: 'AI voice agent', t: 70 },
   { id: 'automation', label: 'Real estate', topic: 'Automation', t: 98 },
   { id: 'marketing', label: 'Boutique', topic: 'AI marketing', t: 124 },
   { id: 'operations', label: 'Retail chain', topic: 'Dashboards', t: 149 },
@@ -29,13 +29,13 @@ const VIDEOS: Record<Mode, { tab: string; length: string; file: string; poster: 
     label: 'four2labs story film - six business stories, captions shown in the video',
   },
   demo: {
-    tab: 'Demo: AI receptionist',
+    tab: 'Demo: Voisy',
     length: '1:00',
     file: 'four2labs-demo-short',
     poster: '/video/four2labs-demo-poster.jpg',
     captions: '/video/four2labs-demo-short.en.vtt',
-    intro: 'One call, start to finish - our AI receptionist answers, understands what the caller needs and books the meeting.',
-    label: 'Live demonstration of the four2labs AI receptionist handling a call',
+    intro: 'One call, start to finish - Voisy, our AI voice agent, answers, understands what the caller needs and books the meeting.',
+    label: 'Live demonstration of Voisy, the four2labs AI voice agent, handling a call',
   },
 }
 
@@ -124,7 +124,7 @@ export default function DemoVideo() {
         <div className="video-tabs-wrap">
           {!seenDemo && mode !== 'demo' && (
             <button type="button" className="demo-hint" onClick={() => play('demo')}>
-              Watch our AI take a call · 1 min
+              Watch Voisy take a call · 1 min
             </button>
           )}
           <div className="video-tabs" role="tablist" aria-label="Choose a video">
@@ -182,7 +182,7 @@ export default function DemoVideo() {
             <p className="demo-note">Stories shown are illustrative.</p>
           </>
         ) : (
-          <p className="demo-note">A demonstration of how our AI receptionist handles a call, from first ring to booked meeting.</p>
+          <p className="demo-note">A demonstration of how Voisy, our AI voice agent, handles a call, from first ring to booked meeting.</p>
         )}
 
         <div className="demo-actions reveal">

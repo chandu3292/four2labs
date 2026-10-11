@@ -29,6 +29,7 @@ export default function Nav() {
         <nav className={`nav-links ${open ? 'open' : ''}`}>
           <NavLink to="/" end onClick={close}>Home</NavLink>
           <NavLink to="/services" onClick={close}>Services</NavLink>
+          <NavLink to="/voisy" onClick={close} className="nav-voisy"><img src="/voisy-icon.webp" alt="" width={22} height={22} className="nav-voisy-icon" />Voisy</NavLink>
           <NavLink to="/about" onClick={close}>About</NavLink>
           <NavLink to="/contact" onClick={close}>Contact</NavLink>
           <Link to="/book" className="btn btn-primary nav-sheet-cta" onClick={close}>Book a free 30-min call →</Link>

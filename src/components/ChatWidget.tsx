@@ -16,7 +16,7 @@ type Step = { text: ReactNode; actions: Action[] }
 
 const MENU: Action[] = [
   { label: 'What do you build?', next: 'services' },
-  { label: 'Show me the AI receptionist', next: 'demo' },
+  { label: 'Meet Voisy, our AI voice agent', next: 'demo' },
   { label: 'How much does it cost?', next: 'pricing' },
   { label: 'How long does it take?', next: 'timeline' },
   { label: 'Book a free call', next: 'book' },
@@ -29,17 +29,18 @@ const STEPS: Record<string, Step> = {
     actions: MENU,
   },
   services: {
-    text: <>We build <b>websites & mobile apps</b>, <b>AI assistants</b> that answer calls and book appointments, <b>dashboards</b> for your sales and operations, and <b>automations</b> for the repetitive work - then we look after it all every month.</>,
+    text: <>We build <b>websites & mobile apps</b>, <b>Voisy</b>, our AI voice agent that answers and makes calls, <b>dashboards</b> for your sales and operations, and <b>automations</b> for the repetitive work - then we look after it all every month.</>,
     actions: [
       { label: 'See all services', to: '/services' },
-      { label: 'Show me the AI receptionist', next: 'demo' },
+      { label: 'Meet Voisy, our AI voice agent', next: 'demo' },
       { label: 'Book a free call', next: 'book' },
     ],
   },
   demo: {
-    text: <>Our AI receptionist answers calls 24/7, captures every lead and books meetings straight into your calendar. There's a 3-minute video of a real call on our home page.</>,
+    text: <><b>Voisy</b> is our AI voice agent. It answers your calls 24/7, makes follow-up and reminder calls, captures every lead and books appointments straight into your calendar.</>,
     actions: [
-      { label: 'Watch the video', to: '/#demo' },
+      { label: 'Meet Voisy', to: '/voisy' },
+      { label: 'Watch the 1-min demo', to: '/?video=demo' },
       { label: 'I want one for my business', next: 'book' },
       { label: 'What else do you build?', next: 'services' },
     ],

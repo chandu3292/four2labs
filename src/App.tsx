@@ -13,6 +13,7 @@ const About = lazy(() => import('./pages/About'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Book = lazy(() => import('./pages/Book'))
 const Privacy = lazy(() => import('./pages/Privacy'))
+const Voisy = lazy(() => import('./pages/Voisy'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 export default function App() {
@@ -51,6 +52,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/book" element={<Book />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/voisy" element={<Voisy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

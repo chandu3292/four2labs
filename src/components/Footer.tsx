@@ -17,6 +17,7 @@ export default function Footer() {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/services">Services</Link></li>
+              <li><Link to="/voisy">Voisy</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
@@ -24,6 +25,7 @@ export default function Footer() {
           <div>
             <h2 className="footer-title">Services</h2>
             <ul>
+              <li><Link to="/voisy">Voisy AI Voice Agent</Link></li>
               <li><Link to="/services#websites">Websites &amp; Apps</Link></li>
               <li><Link to="/services#ai">AI Assistance</Link></li>
               <li><Link to="/services#operations">CRM Dashboards &amp; Data</Link></li>

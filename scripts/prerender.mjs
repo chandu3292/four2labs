@@ -23,7 +23,7 @@ function withMeta(html, meta) {
 }
 
 // Route -> output file (cleanUrls in vercel.json serves /services from services.html)
-const pages = { '/': 'index.html', '/services': 'services.html', '/about': 'about.html', '/contact': 'contact.html', '/book': 'book.html', '/privacy': 'privacy.html', '/404': '404.html' }
+const pages = { '/': 'index.html', '/services': 'services.html', '/about': 'about.html', '/contact': 'contact.html', '/book': 'book.html', '/privacy': 'privacy.html', '/voisy': 'voisy.html', '/404': '404.html' }
 
 for (const [route, file] of Object.entries(pages)) {
   const body = await render(route)

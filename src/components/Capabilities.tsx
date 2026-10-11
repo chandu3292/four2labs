@@ -1,7 +1,8 @@
 import {
-  CalendarCheck, ChartColumn, Globe, Headset, MessagesSquare, Package,
+  CalendarCheck, ChartColumn, Globe, MessagesSquare, Package,
   ReceiptText, ShoppingCart, Smartphone, Users, Workflow, Wrench,
 } from 'lucide-react'
+import VoisyIcon from './VoisyIcon'
 
 // What we can build - shown as capabilities, never as past client work
 const solutions = [
@@ -9,7 +10,7 @@ const solutions = [
   { Icon: ShoppingCart, title: 'Online stores & ordering', text: 'Sell and take orders online, 24/7' },
   { Icon: Smartphone, title: 'Mobile apps', text: 'Your business in your customers\' pocket' },
   { Icon: CalendarCheck, title: 'Booking systems', text: 'Appointments and reservations, no back-and-forth' },
-  { Icon: Headset, title: 'AI receptionists', text: 'Every call answered, every lead captured' },
+  { Icon: VoisyIcon, title: 'Voisy AI voice agent', text: 'Answers and makes calls, 24/7' },
   { Icon: MessagesSquare, title: 'Chatbots & WhatsApp automation', text: 'Instant replies on your website and chats' },
   { Icon: Users, title: 'CRMs & customer portals', text: 'Every customer and conversation in one place' },
   { Icon: ChartColumn, title: 'Dashboards & reports', text: 'Sales and operations at a glance' },

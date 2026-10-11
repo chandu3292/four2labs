@@ -10,7 +10,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   '/services': {
     title: 'Services - Websites, Apps, AI, Automation & Support | four2labs',
-    description: 'Websites, online stores, mobile apps, booking systems, CRMs, dashboards, AI receptionists, chatbots, document automation, workflow automation, hosting and ongoing support for growing businesses.',
+    description: 'Websites, online stores, mobile apps, booking systems, CRMs, dashboards, AI voice agents, chatbots, document automation, workflow automation, hosting and ongoing support for growing businesses.',
     canonical: 'https://four2labs.com/services',
   },
   '/about': {
@@ -27,6 +27,11 @@ export const PAGE_META: Record<string, PageMeta> = {
     title: 'Book a free 30-min call | four2labs',
     description: 'Pick a time for a free, no-pressure 30-minute call with four2labs. Tell us about your business and we will help you figure out what is worth building.',
     canonical: 'https://four2labs.com/book',
+  },
+  '/voisy': {
+    title: 'Voisy - AI Voice Agent for Inbound & Outbound Calls | four2labs',
+    description: 'Meet Voisy, the four2labs AI voice agent. It answers calls 24/7, books appointments, captures leads and makes follow-up, reminder and feedback calls for your business.',
+    canonical: 'https://four2labs.com/voisy',
   },
   '/privacy': {
     title: 'Privacy Policy | four2labs',

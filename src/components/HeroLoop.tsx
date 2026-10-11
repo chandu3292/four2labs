@@ -4,7 +4,7 @@ import { track } from '@vercel/analytics'
 
 export const PLAY_DEMO_EVENT = 'four2labs:play-demo'
 
-// Silent 14s loop of the AI receptionist booking a call; the button plays the full demo with sound
+// Silent 14s loop of Voisy booking a call; the button plays the full demo with sound
 export default function HeroLoop() {
   const [reduceMotion, setReduceMotion] = useState(false)
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function HeroLoop() {
   return (
     <div className="hero-loop reveal">
       <div className="hero-loop-bar">
-        <span className="pv-live" /> Live: AI receptionist booking a call
+        <span className="pv-live" /> Live: Voisy booking a call
       </div>
       <video
         src="/video/hero-loop.mp4"
@@ -28,7 +28,7 @@ export default function HeroLoop() {
         muted
         loop
         playsInline
-        aria-label="Short silent clip of the four2labs AI receptionist booking a meeting"
+        aria-label="Short silent clip of Voisy, the four2labs AI voice agent, booking a meeting"
       >
         <track kind="captions" src="/video/hero-loop.en.vtt" srcLang="en" label="English" />
       </video>

@@ -142,6 +142,7 @@ export default function Book() {
                         <option value="">- Pick one (or "Not sure") -</option>
                         <option>A new website</option>
                         <option>A mobile app</option>
+                        <option>Voisy AI voice agent (answering &amp; making calls)</option>
                         <option>AI for my business (calls, marketing, automation)</option>
                         <option>Dashboards or data analysis</option>
                         <option>Orders / tracking system</option>

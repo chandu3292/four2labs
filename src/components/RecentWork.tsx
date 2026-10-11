@@ -10,10 +10,10 @@ function ReceptionistPreview() {
   const bars = [6, 12, 20, 14, 26, 18, 30, 22, 14, 8, 16, 24, 30, 20, 12, 18, 26, 16, 10, 22, 28, 18, 12, 20, 14, 8, 16, 24, 18, 10, 6, 12, 20, 14, 8, 6]
   return (
     <div className="pv" aria-hidden="true">
-      <div className="pv-head"><span className="pv-live" /> Live call <span className="pv-ok">Connected</span></div>
+      <div className="pv-head"><img src="/voisy-icon.webp" alt="" width={18} height={18} className="pv-voisy" /> Voisy · Live call <span className="pv-ok">Connected</span></div>
       <div className="pv-wave">{bars.map((h, i) => <span key={i} style={{ height: h }} />)}</div>
       <div className="pv-line"><b>Caller</b> Can I book a check-up for tomorrow?</div>
-      <div className="pv-line"><b>AI</b> Sure - 3:00 PM is free. Shall I book it?</div>
+      <div className="pv-line"><b>Voisy</b> Sure - 3:00 PM is free. Shall I book it?</div>
       <div className="pv-pill"><Check size={13} /> Booked · Tomorrow 3:00 PM</div>
     </div>
   )
@@ -50,8 +50,9 @@ function SchedulingPreview() {
 const products = [
   {
     tag: 'Clinics · Restaurants · Service businesses',
-    title: 'AI Receptionist',
-    pitch: 'Never miss a customer call again. It answers 24/7, talks naturally and books straight into your calendar.',
+    title: 'Voisy - AI voice agent',
+    href: '/voisy',
+    pitch: 'Never miss a customer call again. Voisy answers 24/7, books straight into your calendar - and makes your follow-up calls too.',
     points: ['Answers calls day and night, in multiple languages', 'Books, confirms and follows up on appointments', 'Every caller saved as a lead with notes'],
     Preview: ReceptionistPreview,
   },
@@ -96,7 +97,7 @@ export default function RecentWork() {
           <p>Products we've built and run ourselves - set up and tailored to how your business works.</p>
         </div>
         <div className="products" ref={trackRef} onScroll={onScroll}>
-          {products.map(({ tag, title, pitch, points, Preview }) => (
+          {products.map(({ tag, title, pitch, points, Preview, ...rest }) => (
             <div className="product reveal" key={title}>
               <Preview />
               <div className="product-body">
@@ -106,7 +107,9 @@ export default function RecentWork() {
                 <ul>
                   {points.map((pt) => <li key={pt}><Check size={16} /> {pt}</li>)}
                 </ul>
-                <Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} className="product-link">Book a demo →</Link>
+                {'href' in rest && rest.href
+                  ? <Link to={rest.href} className="product-link">Meet Voisy →</Link>
+                  : <Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} className="product-link">Book a demo →</Link>}
               </div>
             </div>
           ))}

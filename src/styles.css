@@ -1604,3 +1604,105 @@ p { color: var(--text-dim); margin: 0 0 16px; }
   .legal-table td { display: block; padding: 0; border: 0; width: auto !important; }
   .legal-table td:first-child { margin-bottom: 4px; }
 }
+
+/* ---------- Voisy page ---------- */
+.voisy-tagline {
+  font-family: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", sans-serif;
+  font-size: 22px; font-weight: 700; font-style: italic;
+  color: var(--text); margin: -6px 0 26px;
+}
+.voisy-tagline span { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.voisy-visual { position: relative; display: grid; place-items: center; min-height: 420px; }
+.voisy-orb {
+  position: absolute; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, var(--bot-glow) 0%, transparent 68%);
+}
+.voisy-bot {
+  position: relative; width: 380px; height: auto;
+  filter: drop-shadow(0 26px 32px var(--bot-shadow));
+  animation: voisy-float 5s ease-in-out infinite;
+}
+:root { --bot-shadow: rgba(30, 41, 99, 0.18); --bot-glow: rgba(124, 92, 255, 0.22); }
+[data-theme="dark"] { --bot-shadow: rgba(0, 0, 0, 0.55); --bot-glow: rgba(124, 92, 255, 0.38); }
+@keyframes voisy-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.voisy-bubble {
+  position: absolute; display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 18px;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+  font-weight: 700; font-size: 15px;
+}
+.voisy-bubble span { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
+.voisy-hi { top: 18px; left: 0; flex-direction: column; align-items: flex-start; gap: 0; border-bottom-left-radius: 4px; }
+.voisy-hi small { font-weight: 500; font-size: 12px; color: var(--muted); }
+.voisy-in { top: 120px; right: 0; }
+.voisy-in span { background: #1f93ff; }
+.voisy-out { bottom: 70px; right: 10px; }
+.voisy-out span { background: #7a5cff; }
+
+.voisy-directions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.voisy-dir { padding: 28px; border-radius: 22px; border: 1px solid var(--border); background: var(--surface); }
+.voisy-dir.inbound { background: linear-gradient(180deg, rgba(31, 147, 255, 0.08), var(--surface) 60%); }
+.voisy-dir.outbound { background: linear-gradient(180deg, rgba(122, 92, 255, 0.1), var(--surface) 60%); }
+.voisy-dir-head { display: flex; gap: 16px; align-items: center; margin-bottom: 18px; }
+.voisy-dir-head h3 { margin: 0; font-size: 22px; }
+.voisy-dir-head p { margin: 2px 0 0; font-weight: 600; }
+.inbound .voisy-dir-head p { color: #1f93ff; }
+.outbound .voisy-dir-head p { color: #7a5cff; }
+.voisy-dir-icon { width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; color: #fff; flex-shrink: 0; }
+.inbound .voisy-dir-icon { background: #1f93ff; box-shadow: 0 10px 24px rgba(31, 147, 255, 0.35); }
+.outbound .voisy-dir-icon { background: #7a5cff; box-shadow: 0 10px 24px rgba(122, 92, 255, 0.35); }
+.voisy-dir ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.voisy-dir li { display: flex; gap: 10px; align-items: flex-start; color: var(--text); font-size: 15px; }
+.voisy-dir li svg { flex-shrink: 0; margin-top: 3px; padding: 2px; border-radius: 50%; color: #fff; }
+.inbound li svg { background: #1f93ff; }
+.outbound li svg { background: #7a5cff; }
+.voisy-note { margin: 16px 0 0; font-size: 12px; color: var(--muted); }
+.voisy-demo { max-width: 860px; margin: 0 auto; }
+
+.voisy-industries { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.voisy-industry {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 18px; border-radius: var(--radius-sm);
+  background: var(--surface); border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.voisy-industry:hover { border-color: var(--brand); transform: translateY(-2px); }
+.voisy-industry span { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--brand-tint); color: var(--eyebrow); flex-shrink: 0; }
+.voisy-industry strong { display: block; font-size: 15px; color: var(--text); margin-bottom: 3px; }
+.voisy-industry small { display: block; font-size: 13px; line-height: 1.45; color: var(--muted); }
+.voisy-more { text-align: center; margin: 20px 0 0; font-size: 14px; color: var(--muted); }
+.voisy-icon { display: block; width: 140%; height: auto; max-width: none; margin: 0 -20%; }
+.svc-icon:has(.voisy-icon), .solution-icon:has(.voisy-icon) { overflow: visible; background: transparent; }
+.nav-voisy-icon { display: inline-block; width: 22px; height: 22px; margin-right: 6px; vertical-align: -6px; }
+.pv-voisy { width: 18px; height: 18px; }
+.voisy-benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+.voisy-benefits > div { display: flex; gap: 12px; align-items: center; }
+.voisy-benefits span { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--brand); color: #fff; flex-shrink: 0; }
+.voisy-benefits strong { display: block; color: var(--text); }
+.voisy-benefits small { color: var(--text-dim); font-size: 13px; }
+
+@media (max-width: 920px) {
+  .voisy-directions { grid-template-columns: 1fr; }
+  .voisy-industries { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .voisy-tagline { font-size: 18px; }
+  .voisy-visual { min-height: 360px; padding-bottom: 44px; }
+  .voisy-orb { width: 320px; height: 320px; }
+  .voisy-bot { width: 280px; }
+  .voisy-bubble { font-size: 13px; padding: 8px 12px; }
+  .voisy-bubble span { width: 26px; height: 26px; }
+  .voisy-hi { top: 4px; }
+  .voisy-in { top: auto; bottom: 0; left: 0; right: auto; }
+  .voisy-out { bottom: 0; right: 0; left: auto; }
+  .voisy-dir { padding: 20px; }
+  .voisy-industries { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .voisy-industry { flex-direction: column; gap: 10px; padding: 14px; }
+  .voisy-industry span { width: 34px; height: 34px; border-radius: 10px; }
+  .voisy-industry strong { font-size: 14px; }
+  .voisy-industry small { font-size: 12px; }
+  .voisy-benefits { grid-template-columns: 1fr; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .voisy-bot { animation: none; } }
