@@ -57,6 +57,12 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.four2labs.com" }],
+      "destination": "https://four2labs.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/in",
       "destination": "/?utm_source=linkedin&utm_medium=social&utm_campaign=bio",
       "permanent": false
