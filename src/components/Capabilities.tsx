@@ -41,7 +41,7 @@ export default function Capabilities() {
         ))}
       </div>
 
-      <div className="chips-block reveal">
+      <div className="chips-block left reveal">
         <h3 className="chips-title">Built for businesses like yours</h3>
         <div className="chips">
           {industries.map((i) => <span className="chip" key={i}>{i}</span>)}

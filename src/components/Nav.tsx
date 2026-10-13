@@ -32,13 +32,13 @@ export default function Nav() {
           <NavLink to="/voisy" onClick={close} className="nav-voisy"><img src="/voisy-icon.webp" alt="" width={22} height={22} className="nav-voisy-icon" />Voisy</NavLink>
           <NavLink to="/about" onClick={close}>About</NavLink>
           <NavLink to="/contact" onClick={close}>Contact</NavLink>
-          <Link to="/book" className="btn btn-primary nav-sheet-cta" onClick={close}>Book a free 30-min call →</Link>
+          <Link to="/book" className="btn btn-primary nav-sheet-cta" onClick={close}>Book a free call →</Link>
           <p className="nav-sheet-note">hello@four2labs.com · Replies within one working day</p>
         </nav>
 
         <div className="nav-actions">
           <ThemeToggle />
-          <Link to="/contact" className="btn btn-primary nav-cta" onClick={close}>Let's talk →</Link>
+          <Link to="/contact" className="btn btn-primary nav-cta" onClick={close}>Talk to us →</Link>
           <button className="nav-toggle" aria-label="Toggle menu" onClick={() => setOpen(o => !o)}>{open ? <X size={20} /> : <Menu size={20} />}</button>
         </div>
       </div>

@@ -96,6 +96,9 @@ const GROUPS: Group[] = [
   },
 ]
 
+// Two side-by-side groups, then one full-width group, so the page never zigzags more than twice in a row
+const LAYOUTS = ['', 'flip', 'wide']
+
 export default function Services() {
   usePageMeta(PAGE_META['/services'])
 
@@ -114,7 +117,7 @@ export default function Services() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">Our services</span>
-          <h1>Tech that <span className="gradient-text">actually helps</span></h1>
+          <h1>Tech that <span className="accent-text">actually helps</span></h1>
           <p>Everything from your first website to AI that runs parts of your business. We mix and match these to fit you - and if you need something not listed, just ask. If it's tech, we build it.</p>
           <nav className="service-jump" aria-label="Jump to a service group">
             {GROUPS.map((g) => (
@@ -125,10 +128,9 @@ export default function Services() {
       </section>
 
       {GROUPS.map((g, i) => (
-        <section id={g.id} key={g.id} className={`service-group ${i % 2 === 1 ? 'flip' : ''}`} style={i % 2 === 1 ? { background: 'var(--bg-2)' } : undefined}>
+        <section id={g.id} key={g.id} className={`service-group ${LAYOUTS[i % LAYOUTS.length]}`} style={i % 2 === 1 ? { background: 'var(--bg-2)' } : undefined}>
           <div className="container svc-split">
             <div className="svc-intro reveal">
-              <span className="eyebrow">{String(i + 1).padStart(2, '0')} - {g.label}</span>
               <h2>{g.title}</h2>
               <p>{g.intro}</p>
               <ServicePreview id={g.id} />
@@ -158,7 +160,7 @@ export default function Services() {
             <span className="eyebrow">Our promise</span>
             <h2>You only pay for what you actually need</h2>
             <p>We never sell tech for the sake of selling tech. After our first conversation, we recommend the smallest set of services that will actually move your business forward - and we tell you honestly when something isn't worth building.</p>
-            <Link to="/contact" className="btn btn-primary">Get a free recommendation →</Link>
+            <Link to="/contact" className="btn btn-primary">Talk to us →</Link>
           </div>
           <div className="reveal">
             <div className="hero-card why-card">

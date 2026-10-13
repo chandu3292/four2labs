@@ -8,11 +8,11 @@ export default function NotFound() {
     <section className="page-header">
       <div className="container">
         <span className="eyebrow">404</span>
-        <h1>This page <span className="gradient-text">doesn't exist</span></h1>
+        <h1>This page <span className="accent-text">doesn't exist</span></h1>
         <p>The link may be broken or the page may have moved. Let's get you back on track.</p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginTop: 32 }}>
           <Link to="/" className="btn btn-primary">Back to home →</Link>
-          <Link to="/contact" className="btn btn-ghost">Contact us</Link>
+          <Link to="/contact" className="btn btn-ghost">Talk to us</Link>
         </div>
       </div>
     </section>

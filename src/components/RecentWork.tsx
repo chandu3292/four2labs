@@ -49,7 +49,7 @@ function SchedulingPreview() {
 
 const products = [
   {
-    tag: 'Clinics · Restaurants · Service businesses',
+    tag: 'Clinics, restaurants, service businesses',
     title: 'Voisy - AI voice agent',
     href: '/voisy',
     pitch: 'Never miss a customer call again. Voisy answers 24/7, books straight into your calendar - and makes your follow-up calls too.',
@@ -57,14 +57,14 @@ const products = [
     Preview: ReceptionistPreview,
   },
   {
-    tag: 'Teams · Support desks · Retail',
+    tag: 'Teams, support desks, retail',
     title: 'Business Knowledge Assistant',
     pitch: 'Your price lists, policies and manuals - answered in seconds, for your staff or your customers.',
     points: ['Reads PDFs, Word files and scanned paper', 'Answers in plain language and shows the source', 'Cuts repeat questions to your team'],
     Preview: KnowledgePreview,
   },
   {
-    tag: 'Schools · Coaching centres · Shift teams',
+    tag: 'Schools, coaching centres, shift teams',
     title: 'Smart Scheduler',
     pitch: 'Timetables, staff rosters and shifts built automatically - no clashes, no late-night spreadsheets.',
     points: ['Respects availability, rooms and rules you set', 'Rebuilds instantly when something changes', 'Shares the final schedule with everyone'],
@@ -72,7 +72,7 @@ const products = [
   },
 ]
 
-export default function RecentWork() {
+export default function RecentWork({ tinted = false }: { tinted?: boolean }) {
   // On phones the cards become a swipe carousel; the dots follow the visible card
   const trackRef = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(0)
@@ -89,7 +89,7 @@ export default function RecentWork() {
   }
 
   return (
-    <section>
+    <section style={tinted ? { background: 'var(--bg-2)' } : undefined}>
       <div className="container">
         <div className="section-head reveal">
           <span className="eyebrow">Our products</span>

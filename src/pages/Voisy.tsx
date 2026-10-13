@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  BookOpen, CalendarCheck, Check, ClipboardList, GraduationCap, HeartHandshake, House, Landmark,
+  BookOpen, Check, ClipboardList, GraduationCap, HeartHandshake, House, Landmark,
   PhoneIncoming, PhoneOutgoing, Plane, Play, ShoppingCart, Stethoscope, TrendingUp, Users, Wrench, Zap,
 } from 'lucide-react'
 import { track } from '@vercel/analytics'
@@ -65,7 +65,6 @@ export default function Voisy() {
       <section className="hero voisy-hero">
         <div className="container hero-grid">
           <div>
-            <span className="eyebrow">Introducing</span>
             <h1>Meet <span className="gradient-text">Voisy</span></h1>
             <p className="lead">four2labs' AI voice agent that talks, listens and gets things done - for your business.</p>
             <p className="voisy-tagline">It doesn't just answer calls. <span>It makes them, too.</span></p>
@@ -87,7 +86,6 @@ export default function Voisy() {
       <section style={{ background: 'var(--bg-2)' }}>
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">One agent, two directions</span>
             <h2>Inbound and outbound, handled</h2>
             <p>Voisy picks up when customers call you - and calls them back when it matters.</p>
           </div>
@@ -114,7 +112,6 @@ export default function Voisy() {
       <section id="hear-voisy" className="demo">
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">Hear Voisy in action</span>
             <h2>One call, start to finish</h2>
             <p>Watch Voisy answer, understand what the caller needs and book the appointment - in about a minute.</p>
           </div>
@@ -125,7 +122,6 @@ export default function Voisy() {
       <section>
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">How it works</span>
             <h2>Live in three simple steps</h2>
           </div>
           <div className="steps">
@@ -170,7 +166,7 @@ export default function Voisy() {
             <p>See how Voisy would sound on your business's calls. A free 30-minute walkthrough, no pressure.</p>
             <div className="hero-actions" style={{ justifyContent: 'center', marginBottom: 0 }}>
               <Link to={BOOKING_PATH} className="btn btn-primary" {...book}>Book a Voisy demo →</Link>
-              <Link to="/contact" className="btn btn-ghost"><CalendarCheck size={16} style={{ marginRight: 6, verticalAlign: -2 }} />Ask a question</Link>
+              <Link to="/contact" className="btn btn-ghost">Talk to us</Link>
             </div>
           </div>
         </div>

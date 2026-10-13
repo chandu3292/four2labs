@@ -78,7 +78,7 @@ export default function Book() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">Free 30-min call</span>
-          <h1>Book a <span className="gradient-text">free call</span></h1>
+          <h1>Book a <span className="accent-text">free call</span></h1>
           <p>Pick a time that suits you. We'll talk about your business, what's slowing you down, and what's worth building - no sales pressure.</p>
         </div>
       </section>

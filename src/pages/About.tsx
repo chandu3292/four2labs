@@ -11,7 +11,7 @@ export default function About() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">About us</span>
-          <h1>We're here to make tech<br /><span className="gradient-text">work for your business</span></h1>
+          <h1>We're here to make tech<br /><span className="accent-text">work for your business</span></h1>
           <p>Most businesses don't need more tech - they need the right tech, built well, explained simply. That's the whole reason we exist.</p>
         </div>
       </section>
@@ -19,7 +19,6 @@ export default function About() {
       <section>
         <div className="container two-col">
           <div className="reveal">
-            <span className="eyebrow">Our story</span>
             <h2>Started with one frustrating truth</h2>
             <p>So many great businesses - shops, clinics, restaurants, service providers - were being held back by the same thing: tech that was too complicated, too expensive, or built without really understanding their day-to-day.</p>
             <p>We started four2labs to fix that - to be the kind of tech partner we wished those business owners had: friendly, honest, and genuinely focused on helping them grow, not on selling them features they don't need.</p>
@@ -36,7 +35,7 @@ export default function About() {
         </div>
       </section>
 
-      <Founder />
+      <Founder eyebrow={false} />
 
       <section style={{ background: 'var(--bg-2)' }}>
         <div className="container">
@@ -59,7 +58,6 @@ export default function About() {
       <section>
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">What's different</span>
             <h2>We're not your usual tech agency</h2>
             <p>Here's how working with us tends to feel different from the alternatives.</p>
           </div>
@@ -77,7 +75,7 @@ export default function About() {
           <div className="cta reveal">
             <h2>Let's see if we're a good fit</h2>
             <p>The first conversation is free, friendly and no-pressure. Whether or not we end up working together, you'll leave with something useful.</p>
-            <Link to="/contact" className="btn btn-primary">Say hello →</Link>
+            <Link to="/contact" className="btn btn-primary">Talk to us →</Link>
           </div>
         </div>
       </section>

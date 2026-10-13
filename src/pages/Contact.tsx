@@ -62,7 +62,7 @@ export default function Contact() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">Contact us</span>
-          <h1>Tell us about your <span className="gradient-text">business</span></h1>
+          <h1>Tell us about your <span className="accent-text">business</span></h1>
           <p>Even if you're not sure what you need, we'd love to chat. The first conversation is always free, friendly and useful - no sales pressure.</p>
         </div>
       </section>
@@ -141,7 +141,7 @@ export default function Contact() {
             </div>
             <div className="info-card" style={{ background: 'linear-gradient(135deg, rgba(123,92,255,0.18), rgba(91,140,255,0.12))', borderColor: 'rgba(123,92,255,0.35)' }}>
               <div className="ic-icon"><CalendarCheck size={18} /></div>
-              <div><h3 className="info-title">Prefer a quick call?</h3><p style={{ marginBottom: 12 }}>Book a free, no-pressure 30-minute call at a time that works for you.</p><Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Book a free 30-min call →</Link></div>
+              <div><h3 className="info-title">Prefer a quick call?</h3><p style={{ marginBottom: 12 }}>Book a free, no-pressure 30-minute call at a time that works for you.</p><Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Book a free call →</Link></div>
             </div>
           </div>
         </div>
@@ -150,7 +150,6 @@ export default function Contact() {
       <section style={{ background: 'var(--bg-2)' }}>
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">Common questions</span>
             <h2>Before you get in touch</h2>
             <p>Quick answers to things people usually ask before that first conversation.</p>
           </div>

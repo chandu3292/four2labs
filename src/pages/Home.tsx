@@ -20,15 +20,10 @@ export default function Home() {
           <div>
             <span className="eyebrow">Tech partners for growing businesses</span>
             <h1>We build the tech.<br /><span className="gradient-text">You grow the business.</span></h1>
-            <p className="lead">From your first website to AI that automates your work - we design, build and look after the technology that powers your business, so you can focus on serving customers.</p>
+            <p className="lead">From your first website to AI automation, we build and look after your tech, so you can focus on customers.</p>
             <div className="hero-actions">
               <Link to="/services" className="btn btn-primary">See what we do →</Link>
-              <Link to="/contact" className="btn btn-ghost">Get a free consultation</Link>
-            </div>
-            <div className="hero-meta">
-              <span>No tech jargon</span>
-              <span>End-to-end delivery</span>
-              <span>Built around your goals</span>
+              <Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click', { from: 'hero' })} className="btn btn-ghost">Book a free call</Link>
             </div>
           </div>
 
@@ -38,30 +33,28 @@ export default function Home() {
 
       <DemoVideo />
 
-      <section style={{ background: 'var(--bg-2)' }}>
+      <section>
         <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">What we do</span>
+          <div className="section-head left reveal">
             <h2>Everything tech, under one roof</h2>
             <p>From your first website to AI that runs parts of your business - here's what we build. Need something that isn't listed? If it's tech, we build it.</p>
           </div>
           <Capabilities />
-          <div className="text-center mt-24">
-            <Link to="/services" className="btn btn-ghost">Explore all services →</Link>
+          <div className="mt-24">
+            <Link to="/services" className="btn btn-ghost">See what we do →</Link>
           </div>
         </div>
       </section>
 
-      <RecentWork />
+      <RecentWork tinted />
 
-      <section style={{ background: 'var(--bg-2)' }}>
-        <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">How we work</span>
+      <section>
+        <div className="container two-col process-split">
+          <div className="reveal">
             <h2>A simple, friendly process</h2>
             <p>You don't need to know any tech to work with us. We translate your goals into a clear plan - and then we build it.</p>
           </div>
-          <div className="steps">
+          <div className="steps steps-vertical">
             <div className="step reveal"><h3>We listen</h3><p>A relaxed chat about your business, your customers and what's slowing you down right now.</p></div>
             <div className="step reveal"><h3>We plan</h3><p>A clear, jargon-free plan with what we'll build, what it does for you, and the timeline.</p></div>
             <div className="step reveal"><h3>We build</h3><p>Our team designs and builds it, sharing progress regularly so there are no surprises.</p></div>
@@ -70,13 +63,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section style={{ background: 'var(--bg-2)' }}>
         <div className="container two-col">
           <div className="reveal">
-            <span className="eyebrow">Why teams choose us</span>
             <h2>We treat your business like ours</h2>
             <p>We're not a faceless agency. We sit with you, understand your customers, and build technology that actually helps - not technology for technology's sake.</p>
             <p>Whether you're a small shop or a growing company, our job is the same: make tech feel simple, useful and worth every penny.</p>
+            <div className="hero-meta why-meta">
+              <span>No tech jargon</span>
+              <span>End-to-end delivery</span>
+              <span>Built around your goals</span>
+            </div>
             <Link to="/about" className="btn btn-ghost">More about us →</Link>
           </div>
           <div className="reveal">
@@ -102,7 +99,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Founder tinted />
+      <Founder />
 
       <section>
         <div className="container">
@@ -110,8 +107,8 @@ export default function Home() {
             <h2>Have an idea? Or a problem?</h2>
             <p>Tell us about your business - even if you're not sure what you need yet. We'll help you figure out what's worth building.</p>
             <div className="hero-actions" style={{ justifyContent: 'center', marginBottom: 0 }}>
-              <Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Book a free 30-min call →</Link>
-              <Link to="/contact" className="btn btn-ghost">Send us a message</Link>
+              <Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Book a free call →</Link>
+              <Link to="/contact" className="btn btn-ghost">Talk to us</Link>
             </div>
           </div>
         </div>

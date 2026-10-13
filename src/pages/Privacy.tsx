@@ -29,7 +29,7 @@ export default function Privacy() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">Privacy</span>
-          <h1>Privacy <span className="gradient-text">Policy</span></h1>
+          <h1>Privacy <span className="accent-text">Policy</span></h1>
           <p>How we collect, use and protect your information - in plain language.</p>
           <p className="legal-date">Last updated: {UPDATED}</p>
         </div>

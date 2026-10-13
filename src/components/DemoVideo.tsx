@@ -116,7 +116,6 @@ export default function DemoVideo() {
     <section className="demo" id="story" ref={sectionRef}>
       <div className="container">
         <div className="section-head reveal">
-          <span className="eyebrow">See it in action</span>
           <h2>Watch how we help businesses grow</h2>
           <p>{video.intro}</p>
         </div>
@@ -186,7 +185,7 @@ export default function DemoVideo() {
         )}
 
         <div className="demo-actions reveal">
-          <Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Let's build yours →</Link>
+          <Link to={BOOKING_PATH} onMouseEnter={prefetchSlots} onTouchStart={prefetchSlots} onFocus={prefetchSlots} onClick={() => track('booking_click')} className="btn btn-primary">Book a free call →</Link>
         </div>
       </div>
     </section>
