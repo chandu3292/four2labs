@@ -3,7 +3,7 @@ import { renderToPipeableStream } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
 import App from './App'
 
-export { PAGE_META } from './lib/meta'
+export { PAGE_META, pageSchema, robotsFor, serializeSchema } from './lib/meta'
 
 // Renders one route to HTML at build time, waiting for lazily loaded pages to finish
 export function render(url: string): Promise<string> {

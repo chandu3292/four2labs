@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url'
 import { resolve } from 'node:path'
 
 const dist = resolve('dist')
-const { render, PAGE_META } = await import(pathToFileURL(resolve('dist-server/entry-server.js')).href)
+const { render, PAGE_META, pageSchema, robotsFor, serializeSchema } = await import(pathToFileURL(resolve('dist-server/entry-server.js')).href)
 const template = readFileSync(resolve(dist, 'index.html'), 'utf8')
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
@@ -14,8 +14,9 @@ function withMeta(html, meta) {
   return html
     .replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${esc(meta.description)}"`)
-    .replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${meta.canonical}"`)
-    .replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${meta.canonical}"`)
+    .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, meta.canonical ? `<link rel="canonical" href="${esc(meta.canonical)}" />` : '')
+    .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, meta.canonical ? `<meta property="og:url" content="${esc(meta.canonical)}" />` : '')
+    .replace(/<meta name="robots" content="[^"]*"/, `<meta name="robots" content="${robotsFor(meta)}"`)
     .replace(/<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${esc(meta.title)}"`)
     .replace(/<meta property="og:description" content="[^"]*"/, `<meta property="og:description" content="${esc(meta.description)}"`)
     .replace(/<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${esc(meta.title)}"`)
@@ -28,8 +29,8 @@ const pages = { '/': 'index.html', '/services': 'services.html', '/about': 'abou
 for (const [route, file] of Object.entries(pages)) {
   const body = await render(route)
   let html = withMeta(template, PAGE_META[route]).replace('<div id="root"></div>', `<div id="root">${body}</div>`)
-  // Keep the not-found page out of search results
-  if (route === '/404') html = html.replace('<meta name="robots" content="index, follow" />', '<meta name="robots" content="noindex" />')
+  const schema = pageSchema(PAGE_META[route])
+  if (schema) html = html.replace('</head>', `<script id="page-schema" type="application/ld+json">${serializeSchema(schema)}</script></head>`)
   if (!/<h1[\s>]/.test(body)) throw new Error(`Prerender of ${route} has no <h1>`)
   writeFileSync(resolve(dist, file), html)
   console.log(`prerendered ${route} -> ${file} (${Math.round(html.length / 1024)} KB)`)

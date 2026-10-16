@@ -36,7 +36,7 @@ export default function Footer() {
             <h2 className="footer-title">Get in touch</h2>
             <ul>
               <li><a href="mailto:hello@four2labs.com">hello@four2labs.com</a></li>
-              <li><a href="tel:+919390694802">+91 93906 94802</a></li>
+              <li><a href="tel:+13525701440">+1 352 570 1440</a></li>
             </ul>
           </div>
         </div>

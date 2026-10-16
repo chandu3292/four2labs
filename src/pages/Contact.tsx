@@ -129,7 +129,7 @@ export default function Contact() {
             </div>
             <div className="info-card">
               <div className="ic-icon"><Phone size={18} /></div>
-              <div><h3 className="info-title">Call or WhatsApp</h3><p><a href="tel:+919390694802" style={{ color: 'var(--text)' }}>+91 93906 94802</a><br /><a href={whatsappLink("Hi four2labs! I'd like to know more about your services.")} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click')} style={{ color: 'var(--good)', fontWeight: 600 }}>Chat on WhatsApp →</a></p></div>
+              <div><h3 className="info-title">Call or WhatsApp</h3><p><a href="tel:+13525701440" style={{ color: 'var(--text)' }}>+1 352 570 1440</a><br /><a href={whatsappLink("Hi four2labs! I'd like to know more about your services.")} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click')} style={{ color: 'var(--good)', fontWeight: 600 }}>Chat on WhatsApp →</a></p></div>
             </div>
             <div className="info-card">
               <div className="ic-icon"><Clock size={18} /></div>
